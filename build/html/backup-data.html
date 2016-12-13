@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Backup dữ liệu &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Sửa lỗi Vinacart" href="troubleshooting.html"/>
+        <link rel="prev" title="Sử dụng Form" href="form.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Giới thiệu vinacart theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình Vinacart theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">Cấu hình chung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html">Sử dụng Form</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Backup dữ liệu</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#danh-cho-theme-developer">Dành cho theme developer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cau-truc-theme-demo">Cấu trúc theme demo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Sửa lỗi Vinacart</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Backup dữ liệu</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/backup-data.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="backup-du-lieu">
+<h1>Backup dữ liệu<a class="headerlink" href="#backup-du-lieu" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="danh-cho-theme-developer">
+<h2>Dành cho theme developer<a class="headerlink" href="#danh-cho-theme-developer" title="Permalink to this headline">¶</a></h2>
+<p>Sau khi chúng ta xây dựng một theme hoàn chỉnh, bây giờ đến bước backup lại dữ liệu để đóng thành demo theme.</p>
+</div>
+<div class="section" id="cau-truc-theme-demo">
+<h2>Cấu trúc theme demo<a class="headerlink" href="#cau-truc-theme-demo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>data/ - dữ liệu website.<ul>
+<li>blocks.xml</li>
+<li>layout.xml</li>
+<li>ecommerce_data.xml</li>
+<li>content_extension.sql</li>
+</ul>
+</li>
+<li>files/ - chứa files tài nguyên (ie: ảnh,..)<ul>
+<li>download/</li>
+<li>image/</li>
+<li>resources/</li>
+</ul>
+</li>
+</ul>
+<p>Và cộng thêm cả thư mục theme của bạn.</p>
+<p>Thực hiện các bước sau:
+Truy cập <strong>System &gt; Settings &gt; My Settings</strong>.</p>
+<img alt="_images/vnc-my-settings.jpg" src="_images/vnc-my-settings.jpg" />
+<p>Theo như hình trên, nhấn vào nút <strong>Export sample data</strong> để xuất file <cite>ecommerce_data.xml</cite> và <cite>blocks.xml</cite>. Chú ý: với file <cite>ecommerce_data.xml</cite> chọn toàn bộ các mục nhưng trừ Blocks.</p>
+<img alt="_images/vnc-export1.jpg" src="_images/vnc-export1.jpg" />
+<p>Ngược lại với <code class="docutils literal"><span class="pre">blocks.xml</span></code> chỉ chọn mục Blocks. Mục &#8216;File Format&#8217; chọn XML. Trường &#8216;File Name&#8217; điền &#8216;blocks&#8217; &amp; nhấn <strong>Export</strong></p>
+<p>Bạn cũng có thể sử dụng 2 nút <strong>Export</strong> để tải files về.</p>
+<img alt="_images/vnc-export2.jpg" src="_images/vnc-export2.jpg" />
+<p>Để Export <code class="docutils literal"><span class="pre">content_extension.sql</span></code> click vào nút <strong>Export tables &amp; content</strong>.
+Chú ý: để cập nhật ngày, bạn làm một bước nữa là thay thế ngày thành hàm sql như sau:
+Mở file .sql với phần mềm notepad++, check vào &#8216;Regular expression&#8217;.
+Lần 1:</p>
+<ul class="simple">
+<li>Find what: <code class="docutils literal"><span class="pre">'2016.+',</span></code></li>
+<li>Replace with: <code class="docutils literal"><span class="pre">now\(\),</span></code></li>
+</ul>
+<p>Lần 2:</p>
+<ul class="simple">
+<li>Find what: <code class="docutils literal"><span class="pre">'2016.+'\)</span></code></li>
+<li>Replace with: <code class="docutils literal"><span class="pre">now\(\)\)</span></code></li>
+</ul>
+<p>Để export <code class="docutils literal"><span class="pre">layout.xml</span></code>, nhấn nút <strong>Export Layout</strong>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="troubleshooting.html" class="btn btn-neutral float-right" title="Sửa lỗi Vinacart" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="form.html" class="btn btn-neutral" title="Sử dụng Form" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, hoangweb.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

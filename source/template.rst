@@ -1,0 +1,51 @@
+========
+Template
+========
+
+
+Biến sử dụng trong template
+===========================
+
+Biến toàn cục: ``$vnc`` truy cập ở mọi template (.tpl).
+
+.. code-block:: php
+
+	if($vnc) {
+	      if($vnc->getVar('product')) echo $vnc->getVar('product')->name;
+	      elseif($vnc->getVar('category')) {
+	        echo $vnc->getVar('category')->name;
+	        echo '<p>'.$vnc->getVar('category')->description.'</p>';
+	      }
+	      elseif($vnc->getVar('heading_title') ) echo ((string)$vnc->getVar('heading_title'));
+	      else echo $vnc->getVar('heading_title');
+	    }
+
+Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent block (column_left, ..))
+
+.. code-block:: php
+
+	//parent block, child block index
+	$this->hw->_view->block('header_bottom', 0);
+	$this->hw->_view->block('footer_top', 1);
+
+Xuất bản template
+=================
+
+Mỗi một site tạo ra sẽ sử dụng một template riêng (ie, ``mytheme``) bên cạnh template mặc định (``default``) của hệ thống.
+Template mới sử dụng trong App sẽ có ID phân biệt, để xuất bản theme lên store. 
+Lưu ý: Một site có thể cài đặt nhiều template nhưng chỉ kích hoạt sử dụng một template.
+
+ID này được sinh ra khi site được tạo hoàn tất. Để publish theme bạn cần kiểm tra xem ID của theme được tạo ra hay chưa, nếu chưa báo lỗi với admin.
+
+Publish template
+----------------
+
+Để publish theme, bạn cần kích hoạt lại template đang push lên store (không phải default theme hoặc nếu trường hợp site có cài nhiều template). TH xóa theme bạn cũng pải cần kích hoạt lại theme ở backend site, để thiết lập lại theme muốn publish lên store.
+
+*Chú ý*: Nếu không làm đúng quy trình sẽ phát sinh lỗi trong quá trình publish template.
+
+Unpublish template
+------------------
+
+Sau khi publish theme thành công hay một khi theme đã được xuất bản, bạn có thể gỡ bỏ ra khỏi store. Để thực hiện truy cập trang app, ở tab **Settings** mục **Publish Theme** nhấn vào **Delete from store** từ dropdown.
+
