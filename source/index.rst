@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-TÀI LIỆU HƯỚNG DẪN VINACART
+HƯỚNG DẪN THIẾT KẾ THEMES
 ===========================
 
 Trang web này phục vụ như là một nguồn tài nguyên chính thức tài liệu VinaCart chính cho người sử dụng quản lý và phát triển với VinaCart.
@@ -18,7 +18,7 @@ Sau khi đọc hướng dẫn này, bạn sẽ rất thoải mái với việc s
 Nếu bạn là nhà phát triển, bạn sẽ sẵn sàng để mã với VinaCart và phát triển các phần mở rộng cho trang web của bạn hoặc khách hàng của bạn.
 
 
-Contents:
+Nội dung:
 
 .. toctree::
    :maxdepth: 2

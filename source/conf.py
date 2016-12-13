@@ -54,8 +54,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Vinacart Docs'
-copyright = u'2016, hoangweb'
-author = u'hoangweb'
+copyright = u'2016, VinaCart'
+author = u'VinaCart'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -265,7 +265,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'vinacart.tex', u'Vinacart Documentation',
-     u'hoangweb', 'manual'),
+     u'VinaCart', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
