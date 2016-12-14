@@ -5,6 +5,7 @@
 
 HƯỚNG DẪN THIẾT KẾ THEMES
 ===========================
+Xem chi tiết source code tại `tailieu.vinacart.net <http://tailieu.vinacart.net>`_
 
 Trang web này phục vụ như là một nguồn tài nguyên chính thức tài liệu VinaCart chính cho người sử dụng quản lý và phát triển với VinaCart.
 Web tài liệu bao gồm nhiều khía cạnh liên quan với việc thiết lập webstore của bạn, quản lý nó với ngày để hoạt động ngày, cũng như hướng dẫn sử dụng theo định hướng phát triển.
