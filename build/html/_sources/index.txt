@@ -24,6 +24,7 @@ Nội dung:
 .. toctree::
    :maxdepth: 2
 
+   cai-dat-vinacart
    vinacart-theme-structure
    theme-config
    global-config

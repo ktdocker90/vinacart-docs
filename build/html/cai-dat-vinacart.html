@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Hướng dẫn cài đặt Vinacart &mdash; Vinacart Docs 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Cấu trúc theme" href="vinacart-theme-structure.html"/>
+        <link rel="prev" title="HƯỚNG DẪN THIẾT KẾ THEMES" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Hướng dẫn cài đặt Vinacart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#cau-hinh-server">Cấu hình Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cai-dat">Cài đặt</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="form.html">Sử dụng Form</a></li>
+<li class="toctree-l1"><a class="reference internal" href="backup-data.html">Backup dữ liệu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Sửa lỗi</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Hướng dẫn cài đặt Vinacart</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/cai-dat-vinacart.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="huong-dan-cai-dat-vinacart">
+<h1>Hướng dẫn cài đặt Vinacart<a class="headerlink" href="#huong-dan-cai-dat-vinacart" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cau-hinh-server">
+<h2>Cấu hình Server<a class="headerlink" href="#cau-hinh-server" title="Permalink to this headline">¶</a></h2>
+<p><strong>Apache</strong>: Yêu cầu bật modules &amp; extension dưới đây:</p>
+<ul class="simple">
+<li><em>Module</em>: mod_rewrite</li>
+<li><em>Extension</em>: ioncube_loader, php_intl, php_curl, php_fileinfo, php_gd2, php_mbstring, php_mysql|php_mysqli|php_pdo_mysql</li>
+</ul>
+</div>
+<div class="section" id="cai-dat">
+<h2>Cài đặt<a class="headerlink" href="#cai-dat" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Chuẩn bị Domain.</li>
+</ol>
+<p>Nếu cài đặt trên localhost, sử dụng xampp, wamp.. bạn cần tạo alias (vd: <code class="docutils literal"><span class="pre">vinacart.dev</span></code>) thay vì sử dụng tên <code class="docutils literal"><span class="pre">localhost</span></code>. Ví dụ:
+Edit file <cite>c:/xampp/conf/extra/httpd-vhosts.conf</cite></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">VirtualHost</span> <span class="o">*</span><span class="p">:</span><span class="mi">80</span><span class="o">&gt;</span>
+    <span class="n">ServerName</span> <span class="n">vinacart</span><span class="o">.</span><span class="n">dev</span>
+    <span class="n">ServerAlias</span> <span class="n">www</span><span class="o">.</span><span class="n">vinacart</span><span class="o">.</span><span class="n">dev</span>
+    <span class="n">DocumentRoot</span> <span class="s2">&quot;C:\xampp\htdocs</span><span class="se">\v</span><span class="s2">inacart&quot;</span>
+    <span class="o">&lt;</span><span class="n">Directory</span> <span class="s2">&quot;C:\xampp\htdocs</span><span class="se">\v</span><span class="s2">inacart&quot;</span><span class="o">&gt;</span>
+        <span class="n">Order</span> <span class="n">allow</span><span class="p">,</span><span class="n">deny</span>
+        <span class="n">Allow</span> <span class="kn">from</span> <span class="nn">all</span>
+    <span class="o">&lt;/</span><span class="n">Directory</span><span class="o">&gt;</span>
+        <span class="n">ErrorLog</span> <span class="n">C</span><span class="p">:</span>\<span class="n">xampp</span>\<span class="n">htdocs</span>\<span class="n">error</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">&lt;/</span><span class="n">VirtualHost</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Tạo database.</li>
+<li>Thiết lập quyền truy cập Files.</li>
+</ol>
+<p>Nếu chạy web trên hệ điều hành Window + xampp/wamp thì bỏ qua bước này.
+Trường hợp sử dụng Linux, để thiết lập chmod đầy đủ cho các file chúng ta chạy file <em>caidat.php</em> trên trình duyệt:
+<code class="docutils literal"><span class="pre">http://vinacart.dev/caidat.php</span></code></p>
+<ol class="arabic simple" start="4">
+<li>Tiến hành cài đặt.</li>
+</ol>
+<p>Mở trình duyệt, truy cập trang cài đặt: <code class="docutils literal"><span class="pre">http://vinacart.dev/install/</span></code>
+Làm theo trình tự các bước (wizard). Điền thông tin đầy đủ rồi nhấn cài đặt, chờ trong vài phút để trình cài đặt hoàn tất.
+Xem chi tiết _video hướng dẫn cách cài đặt: <a class="reference external" href="http://www.vinacart.net/p/download.html">http://www.vinacart.net/p/download.html</a></p>
+<p>Chú ý: nếu bạn muốn cài đặt lại vinacart, sử dụng URL sau: <code class="docutils literal"><span class="pre">http://vinacart.dev/install/?rt=install&amp;force=1</span></code></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="vinacart-theme-structure.html" class="btn btn-neutral float-right" title="Cấu trúc theme" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="HƯỚNG DẪN THIẾT KẾ THEMES" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
