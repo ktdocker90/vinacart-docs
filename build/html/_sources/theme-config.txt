@@ -167,7 +167,7 @@ Ví dụ: gọi thư viện bootstrap.
 
 Mặc định sẽ load các files: bootstrap.min.css, bootstrap.min.js
 
-Xem đầy đủ thư viện tại http://tailieu.vinacart.net/
+Xem đầy đủ thư viện tại http://tailieu.vinacart.net/?p=js_lib&tp=file&view=code
 
 Bạn cũng có viết ngắn gọn như sau:
 ::
