@@ -85,7 +85,9 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Hướng dẫn cài đặt Vinacart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
@@ -150,15 +152,21 @@
 <div class="section" id="bien-su-dung-trong-template">
 <h2>Biến sử dụng trong template<a class="headerlink" href="#bien-su-dung-trong-template" title="Permalink to this headline">¶</a></h2>
 <p>Biến toàn cục: <code class="docutils literal"><span class="pre">$vnc</span></code> truy cập ở mọi template (.tpl).</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="nv">$vnc</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span><span class="p">(</span><span class="nv">$vnc</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">))</span> <span class="k">echo</span> <span class="nv">$vnc</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
-      <span class="k">elseif</span><span class="p">(</span><span class="nv">$vnc</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">echo</span> <span class="nv">$vnc</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
-        <span class="k">echo</span> <span class="s1">&#39;&lt;p&gt;&#39;</span><span class="o">.</span><span class="nv">$vnc</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">description</span><span class="o">.</span><span class="s1">&#39;&lt;/p&gt;&#39;</span><span class="p">;</span>
-      <span class="p">}</span>
-      <span class="k">elseif</span><span class="p">(</span><span class="nv">$vnc</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="p">)</span> <span class="k">echo</span> <span class="p">((</span><span class="nx">string</span><span class="p">)</span><span class="nv">$vnc</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">));</span>
-      <span class="k">else</span> <span class="k">echo</span> <span class="nv">$vnc</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">vnc</span> <span class="o">%</span><span class="p">}</span>
+      <span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;product&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+
+      <span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">description</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+
+      <span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+
+      <span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+      <span class="p">{</span><span class="o">%</span> <span class="k">endif</span> <span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span> <span class="k">endif</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent block (column_left, ..))</p>

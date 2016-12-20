@@ -10,15 +10,21 @@ Biến toàn cục: ``$vnc`` truy cập ở mọi template (.tpl).
 
 .. code-block:: php
 
-	if($vnc) {
-	      if($vnc->getVar('product')) echo $vnc->getVar('product')->name;
-	      elseif($vnc->getVar('category')) {
-	        echo $vnc->getVar('category')->name;
-	        echo '<p>'.$vnc->getVar('category')->description.'</p>';
-	      }
-	      elseif($vnc->getVar('heading_title') ) echo ((string)$vnc->getVar('heading_title'));
-	      else echo $vnc->getVar('heading_title');
-	    }
+	{% if vnc %}
+	      {% if vnc.getVar('product') %} 
+	      	<h3>{{ vnc.getVar('product').name }}</h3>
+	      
+	      {% elseif vnc.getVar('category') %}
+	        <h3>{{ vnc.getVar('category').name }}</h3>
+	        <p>{{ vnc.getVar('category').description }}</p>
+	      
+	      {% elseif vnc.getVar('heading_title') %} 
+	      	<h3>{{vnc.getVar('heading_title') }}</h3>
+	      
+	      {% else %}
+	      	<h3>{{vnc.getVar('heading_title') }}</h3>
+	      {% endif %}
+	{% endif %}
 
 Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent block (column_left, ..))
 

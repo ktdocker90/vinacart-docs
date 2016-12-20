@@ -49,7 +49,7 @@ Mỗi file .tpl có một file cấu hình cùng tên có định dạng .xml v�
 
 	    <!-- options, inherit from extension configuration file -->
 	    <options>
-	        <item name="f1">
+	        <item name="field-1">
 	            <type>selectbox</type>
 	            <title><![CDATA[test_4-field1]]></title>
 	            <desc><![CDATA[4e9750345urjglflfhfghf;e057435]]></desc>
@@ -62,7 +62,7 @@ Mỗi file .tpl có một file cấu hình cùng tên có định dạng .xml v�
 	                <_AI_>featured</_AI_>
 	            </variants>
 	        </item>
-	        <item name="f2">
+	        <item name="field-2">
 	            <type>checkbox</type>
 	            <default_value>0</default_value>
 	        </item>
@@ -143,6 +143,21 @@ Một số thư viện hay sử dụng:
   - ``galleries/photor``
   - ...
 
+Tương tự, nếu bạn muốn bổ xung file của thư viện, khai báo đầy đủ như sau:
+::
+	
+	<item>
+		<type>js_libs</type>
+		<data>
+			<_AI_>
+				<param name="name"><![CDATA[sliders/nivoSlider]]></param>
+				<!-- mỗi file cách nhau dấu | -->
+                <param name="styles"><![CDATA[light.css]]></param>
+			</_AI_>
+		</data>
+	</item>
+
+
 Options
 =======
 
@@ -176,10 +191,11 @@ Options
 
 Nếu bạn khai báo sử dụng thư viện, các thư viện có thể có thêm options sẽ được bổ xung vào các trường bạn đã khai báo ở trên. Chú ý: chỉ lấy options của thư viện đầu tiên.
 
-Sử dụng trong .tpl
-==================
+**Sử dụng trong .tpl**
 
 Giá trị options bạn lưu với block, lưu trong biến ``$options``. Chẳng hạn bạn có thể sử dụng options để tùy chỉnh thư viện jquery.
+
+*PHP*:
 
 .. code-block:: php
 
@@ -190,4 +206,16 @@ Giá trị options bạn lưu với block, lưu trong biến ``$options``. Chẳ
 	        // Recopy the previous line to add scrolling to other divs.
 	    });
 	</script>
+
+*Template engine*:
+
+.. code-block:: php
+
+	<script>
+	    $(window).load(function () {
+	    	var options={{ staticCall('HW_SKIN_Option','build_json_options',options) }};
+	        $("#brand_carousal").endlessScroll(options);
+	    });
+	</script>
+
 

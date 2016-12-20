@@ -85,14 +85,15 @@
             
             
                 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Hướng dẫn cài đặt Vinacart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
 <li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Sử dụng layout blocks</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#tuy-chinh-giao-dien-block">Tùy chỉnh giao diện block</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options">Options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#su-dung-trong-tpl">Sử dụng trong .tpl</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
@@ -184,7 +185,7 @@
 
     &lt;!-- options, inherit from extension configuration file --&gt;
     &lt;options&gt;
-        &lt;item name=&quot;f1&quot;&gt;
+        &lt;item name=&quot;field-1&quot;&gt;
             &lt;type&gt;selectbox&lt;/type&gt;
             &lt;title&gt;&lt;![CDATA[test_4-field1]]&gt;&lt;/title&gt;
             &lt;desc&gt;&lt;![CDATA[4e9750345urjglflfhfghf;e057435]]&gt;&lt;/desc&gt;
@@ -197,7 +198,7 @@
                 &lt;_AI_&gt;featured&lt;/_AI_&gt;
             &lt;/variants&gt;
         &lt;/item&gt;
-        &lt;item name=&quot;f2&quot;&gt;
+        &lt;item name=&quot;field-2&quot;&gt;
             &lt;type&gt;checkbox&lt;/type&gt;
             &lt;default_value&gt;0&lt;/default_value&gt;
         &lt;/item&gt;
@@ -276,6 +277,19 @@ Một số thư viện hay sử dụng:</p>
 </ul>
 </li>
 </ul>
+<p>Tương tự, nếu bạn muốn bổ xung file của thư viện, khai báo đầy đủ như sau:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;item&gt;
+        &lt;type&gt;js_libs&lt;/type&gt;
+        &lt;data&gt;
+                &lt;_AI_&gt;
+                        &lt;param name=&quot;name&quot;&gt;&lt;![CDATA[sliders/nivoSlider]]&gt;&lt;/param&gt;
+                        &lt;!-- mỗi file cách nhau dấu | --&gt;
+        &lt;param name=&quot;styles&quot;&gt;&lt;![CDATA[light.css]]&gt;&lt;/param&gt;
+                &lt;/_AI_&gt;
+        &lt;/data&gt;
+&lt;/item&gt;
+</pre></div>
+</div>
 </div>
 <div class="section" id="options">
 <h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
@@ -306,10 +320,9 @@ Một số thư viện hay sử dụng:</p>
 </pre></div>
 </div>
 <p>Nếu bạn khai báo sử dụng thư viện, các thư viện có thể có thêm options sẽ được bổ xung vào các trường bạn đã khai báo ở trên. Chú ý: chỉ lấy options của thư viện đầu tiên.</p>
-</div>
-<div class="section" id="su-dung-trong-tpl">
-<h2>Sử dụng trong .tpl<a class="headerlink" href="#su-dung-trong-tpl" title="Permalink to this headline">¶</a></h2>
+<p><strong>Sử dụng trong .tpl</strong></p>
 <p>Giá trị options bạn lưu với block, lưu trong biến <code class="docutils literal"><span class="pre">$options</span></code>. Chẳng hạn bạn có thể sử dụng options để tùy chỉnh thư viện jquery.</p>
+<p><em>PHP</em>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
     <span class="err">$</span><span class="p">(</span><span class="nx">window</span><span class="p">)</span><span class="o">.</span><span class="nx">load</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="err">$</span><span class="p">(</span><span class="s2">&quot;#brand_carousal&quot;</span><span class="p">)</span><span class="o">.</span><span class="nx">endlessScroll</span><span class="p">(</span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">echo</span> <span class="nx">HW_SKIN_Option</span><span class="o">::</span><span class="na">build_json_options</span><span class="p">(</span><span class="nv">$options</span><span class="p">)</span><span class="cp">?&gt;</span><span class="x">);</span>
@@ -317,6 +330,15 @@ Một số thư viện hay sử dụng:</p>
 <span class="x">        // Recopy the previous line to add scrolling to other divs.</span>
 <span class="x">    });</span>
 <span class="x">&lt;/script&gt;</span>
+</pre></div>
+</div>
+<p><em>Template engine</em>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+    <span class="err">$</span><span class="p">(</span><span class="nx">window</span><span class="p">)</span><span class="o">.</span><span class="nx">load</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nx">options</span><span class="o">=</span><span class="p">{{</span> <span class="nx">staticCall</span><span class="p">(</span><span class="s1">&#39;HW_SKIN_Option&#39;</span><span class="p">,</span><span class="s1">&#39;build_json_options&#39;</span><span class="p">,</span><span class="nx">options</span><span class="p">)</span> <span class="p">}};</span>
+        <span class="err">$</span><span class="p">(</span><span class="s2">&quot;#brand_carousal&quot;</span><span class="p">)</span><span class="o">.</span><span class="nx">endlessScroll</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 </div>

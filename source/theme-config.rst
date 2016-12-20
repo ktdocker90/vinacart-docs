@@ -6,6 +6,7 @@ File cấu hình của theme cho phép bạn thiết lập tùy biến về giao
 Ngoài ra bạn có thể tùy chỉnh thêm layout hiển thị riêng cho các page cụ thể và điều chỉnh vị trí của các blocks.
 
 Bạn sửa file này tại ``storefront/view/<theme>/config/theme.xml``
+Ví dụ:
 
 ::
 
@@ -14,26 +15,22 @@ Bạn sửa file này tại ``storefront/view/<theme>/config/theme.xml``
 		<assets>
 			<file type="css"><![CDATA[https://fonts.googleapis.com/css?family=Lato:400,700,300]]></file>
 
-			<file type="css"><![CDATA[/theme_asset/css/bootstrap.min.css]]></file>
-			<file type="css"><![CDATA[/theme_asset/css/pe-icon-7-stroke.css]]></file><!-- icon-7-stroke -->
+			<file type="css"><![CDATA[/assets/css/bootstrap.min.css]]></file>
 
 			<!-- global styles -->
 			<file type="js" bottom="1"><![CDATA[/mytheme/themes/js/jquery.scrolltotop.js]]></file>
 
 
 			<file type="js" bottom="1"><![CDATA[/javascript/bootstrap.min.js]]></file>
-			<file type="js" bottom="1"><![CDATA[/theme_asset/js/wow.min.js]]></file>
-			<file type="js" bottom="1"><![CDATA[/theme_asset/js/jquery.meanmenu.js]]></file>
-			<file type="js" bottom="1"><![CDATA[/theme_asset/js/owl.carousel.min.js]]></file>
-			<file type="js" bottom="1"><![CDATA[/theme_asset/js/jquery.countdown.min.js]]></file>
+			<file type="js" bottom="1"><![CDATA[/assets/js/wow.min.js]]></file>
 
 			<!-- fancybox js
 			============================================ -->
-			<file type="js" bottom="1"><![CDATA[/theme_asset/js/fancybox/jquery.fancybox.pack.js]]></file>
+			<file type="js" bottom="1"><![CDATA[/assets/js/fancybox/jquery.fancybox.pack.js]]></file>
 
 			<!-- main JS
 			============================================ -->
-			<file type="js" bottom="1"><![CDATA[/theme_asset/js/main.js]]></file>
+			<file type="js" bottom="1"><![CDATA[/assets/js/main.js]]></file>
 
 			<file type="js" bottom="1"><![CDATA[/javascript/respond.min.js]]></file>
 			<file type="js" bottom="1"><![CDATA[/javascript/jquery.validate.js]]></file>
@@ -49,20 +46,6 @@ Bạn sửa file này tại ``storefront/view/<theme>/config/theme.xml``
 		<assets page="index/home">
 
 		</assets>
-		<assets page="product/product">
-			<!-- <file type="js" bottom="1"><![CDATA[/javascript/easyzoom.js]]></file> -->
-			<file type="css" bottom="0"><![CDATA[/theme_asset/custom-slider/css/nivo-slider.css]]></file>
-			<file type="css" bottom="0"><![CDATA[/theme_asset/custom-slider/css/preview.css]]></file>
-
-			<!-- Nivo slider js
-			============================================ -->
-			<file type="js" bottom="1"><![CDATA[/theme_asset/custom-slider/js/jquery.nivo.slider.js]]></file>
-			<file type="js" bottom="1"><![CDATA[/theme_asset/custom-slider/home.js]]></file>
-
-			<file type="css" bottom="1"><![CDATA[/stylesheet/flexslider.css]]></file>
-			<file type="js" bottom="1"><![CDATA[/javascript/jquery.flexslider.js]]></file>
-		</assets>
-
 		<assets page="about_us">
 			<!-- <file type="css" ><![CDATA[]]></file> --><!-- page="index/home" -->
 			<!-- <file type="js" bottom="1"><![CDATA[]]></file> --><!-- `buttom` attribute only for js file -->
@@ -82,8 +65,31 @@ Bạn sửa file này tại ``storefront/view/<theme>/config/theme.xml``
 		</blocks>
 	</theme>
 
+Configuration
+=============
+
+::
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+	<theme>
+		<!-- configuration -->
+	    <configuration>
+	        <item name="version" value="1.2"/>
+	        <item name="sample_data" value="thoitrang"/>
+	        <item name="name" value="mytheme"/>
+	        <item name="image_product_width_small" value="100"/>
+	        <item name="image_product_height_small" value="95"/>
+	    </configuration>
+
+Khai báo các thông tin cấu hình ở thẻ ``<configuration`` như version, sample_data, name.. Trong đó:
+- version: phiên bản hiện tại của vinacart
+- sample_data: tên dữ liệu mẫu bạn đang viết theme này. Danh sách dữ liệu mẫu gồm có: thoitrang, dulich,...(Bạn có thể bổ xung tùy ý, lưu ý không viết cách & chứa ký tự UTF-8).
+- name: tên thư mục theme.
+
+Xem tiếp phần dưới sẽ giải thích chi tiết cách dùng cấu hình.
+
 Assets
-------
+======
 
 Khai báo chèn các files .js và .css sử dụng trong theme của bạn vào đây trong cặp thẻ ``<assets``.
 
@@ -91,13 +97,15 @@ Khai báo chèn các files .js và .css sử dụng trong theme của bạn vào
 
 	<assets>
 	    <file type="css"><![CDATA[https://fonts.googleapis.com/css?family=Lato:400,700,300]]></file>
-		<file type="css"><![CDATA[/theme_asset/css/animate.css]]></file>
+		<file type="css" media="all"><![CDATA[/asset/css/style.css]]></file>
 		<file type="js" bottom="1"><![CDATA[/javascript/bootstrap.min.js]]></file>
 	</assets>
 
-thuộc tính type chỉ định kiểu file, vd ``type="css"`` dành cho file .css, nếu file bạn muốn load ở cuối trang thì thêm ``bottom="1"`` vào thẻ ``<file`` giống như trên không thì mặc định chúng hiển thị ở trong thẻ ``<head``.
+thuộc tính type chỉ định kiểu file, vd ``type="css"`` dành cho file .css, nếu file bạn muốn load ở cuối trang thì thêm ``bottom="1"`` vào thẻ ``<file`` giống như trên không thì mặc định chúng hiển thị ở trong thẻ ``<head`` (chỉ dành cho file js). 
 
-Để cho đơn giản và dễ quản lý tôi đưa toàn bộ các files assets của theme vào một thư mục ``theme_asset`` nằm tại ``storefront/view/<theme_name>/``. Lưu ý: đường dẫn được bắt đầu trong thư mục theme.
+Đối với file css, bạn có thể bổ xung thuộc tính ``media`` bằng cách khai báo thêm thuộc tính ``media``. vd: *media="all"*
+
+Để cho đơn giản và dễ quản lý tôi đưa toàn bộ các files assets của theme vào một thư mục ``assets`` nằm tại ``storefront/view/<theme_name>/``. Lưu ý: đường dẫn được bắt đầu trong thư mục theme.
 
 Các files css và js hệ thống bạn không được xóa đặc biệt là *.js chúng sử lý hành động của vinacart. vd: ``/javascript``, ``/stylesheet``
 Bên cạnh đó chúng ta có thể chèn URL ngoài như thư viện jquery,...google font.
@@ -108,7 +116,7 @@ Các files chứa trong theme thì được bắt đầu trong thư mục ``stor
 
 ::
 
-	<file type="css"><![CDATA[/theme_asset/style.css]]></file>
+	<file type="css"><![CDATA[/assets/style.css]]></file>
 
 Những files hệ thống thì cũng giống như vậy nhưng ở tại thư mục theme hệ thống mặc định.
 
@@ -119,13 +127,13 @@ Những files hệ thống thì cũng giống như vậy nhưng ở tại thư m
 ::
 
 	<assets page="product/product">
-		<file type="css" bottom="0"><![CDATA[/theme_asset/custom-slider/css/nivo-slider.css]]></file>        
-		<file type="css" bottom="0"><![CDATA[/theme_asset/custom-slider/css/preview.css]]></file>        
+		<file type="css" bottom="0"><![CDATA[/assets/custom-slider/css/nivo-slider.css]]></file>        
+		<file type="css" bottom="0"><![CDATA[/assets/custom-slider/css/preview.css]]></file>        
 
 		<!-- Nivo slider js
 		============================================ -->
-		<file type="js" bottom="1"><![CDATA[/theme_asset/custom-slider/js/jquery.nivo.slider.js]]></file>
-		<file type="js" bottom="1"><![CDATA[/theme_asset/custom-slider/home.js]]></file>
+		<file type="js" bottom="1"><![CDATA[/assets/custom-slider/js/jquery.nivo.slider.js]]></file>
+		<file type="js" bottom="1"><![CDATA[/assets/custom-slider/home.js]]></file>
 	</assets>
 
 Thuộc tính ``page`` chứa thông tin địa chỉ page (địa chỉ controller). Ví dụ: ``storefront/controller/blocks/banner_block.php`` thì địa chỉ page sẽ là ``blocks/banner_block`` . Địa chỉ là tham số ``rt`` khi bạn view site, có thể tìm thấy bằng cách view 1 trang sản phẩm.
@@ -140,13 +148,99 @@ Bạn cũng có thể chỉ định ``page`` bằng tên địa chỉ seo url (a
 ::
 
 	<assets page="about_us">
-		<file type="css" ><![CDATA[/theme_asset/css/file1.css]]></file> --><!-- page="index/home" -->
-		<file type="js" bottom="1"><![CDATA[/theme_asset/js/file1.js]]></file> --><!-- `buttom` attribute only for js file -->
+		<file type="css" ><![CDATA[/assets/css/file1.css]]></file> --><!-- page="index/home" -->
+		<file type="js" bottom="1"><![CDATA[/assets/js/file1.js]]></file> --><!-- `buttom` attribute only for js file -->
 	</assets>
+
+Thư viện
+^^^^^^^^
+
+Vinacart tích hợp sẵn các thư viện javascript/jquery phổ biến. Với mục đích sử dụng tiện lợi, lý do một số thư viện bao gồm nhiều file css & js, bạn sẽ khó quản lý khi chèn từng file đôi khi một số thư viện sử dụng chung file rất dễ bị nhân bản nếu không sử dụng cẩn thận. Do vậy cách dễ dàng nhất là sử dụng thư viện mặc định của vinacart (Chú ý: bạn cũng có thể khai báo thêm thư viện, nếu muốn).
+
+Ví dụ: gọi thư viện bootstrap.
+::
+
+	<file type="lib">
+        <param name="name"><![CDATA[ui/bootstrap]]></param>
+    </file>
+
+
+Mặc định sẽ load các files: bootstrap.min.css, bootstrap.min.js
+
+Xem đầy đủ thư viện tại http://tailieu.vinacart.net/
+
+Bạn cũng có viết ngắn gọn như sau:
+::
+	
+	<file type="lib"><![CDATA[ui/bootstrap]]></file>
+
+Tuy nhiên, trường hợp nếu trong thư viện có thêm một số file (vd: file bổ xung cho thư viện đó) không được mặc định load. VD: nivoSlider có nhiều skins khác nhau. Chúng ta khai báo đầy đủ theo cú pháp trên và thêm tên file bạn muốn nạp, mỗi file cách nhau dấu ``|``:
+::
+
+	<file type="lib">
+        <param name="name"><![CDATA[sliders/nivoSlider]]></param>
+        <param name="styles"><![CDATA[light.css]]></param>
+    </file>
+
+Ví dụ: nạp các plugin của jquery:
+::
+
+	<file type="lib">
+        <param name="name"><![CDATA[jquery-libs]]></param>
+        <param name="scripts"><![CDATA[jquery.mousewheel.min.js|jquery.touchSwipe.min.js|jquery.ba-throttle-debounce.min.js]]></param>
+    </file>
+
+
+Để bổ xung thêm thư viện, bạn viết vào file ``core/config/library.php``
+::
+
+	<?php
+	return array(
+	    'menu/smartmenus' => array(
+	        'scripts'=> array(
+	            'jquery.smartmenus.min.js'=> array(
+	                'file'=> 'jquery.smartmenus.min.js',
+	                'required'=> 1,
+	                'bottom'=> 1
+	            ),
+	            'jquery.smartmenus.bootstrap.js'=> array(
+	                'file' => 'addons/bootstrap/jquery.smartmenus.bootstrap.min.js',
+	                'required'=> 1,
+	                'bottom'=> 1
+	            )
+	        ),
+	        'styles'=> array(
+	            'sm-core-css.css'=> array(
+	                'file'=> 'css/sm-core-css.css',
+	                'required'=> 1
+	            ),
+	            'jquery.smartmenus.bootstrap.css' => array(
+	                'file'=> 'addons/bootstrap/jquery.smartmenus.bootstrap.css',
+	                'required'=> 1
+	            ),
+	            'sm-blue.css'=> array(
+	                'file'=> 'css/sm-blue/sm-blue.css',
+	                'required'=> 0
+	            ),
+	            'sm-clean.css' => array(
+	                'file'=> 'css/sm-clean/sm-clean.css',
+	                'required'=> 1
+	            ),
+	            'sm-mint' => array(
+	                'file'=> 'css/sm-mint/sm-mint.css',
+	                'required'=> 0
+	            ),
+	            'sm-simple' => array(
+	                'file'=> 'css/sm-simple/sm-simple.css',
+	                'required'=> 0
+	            )
+	        )
+	    )
+	);
 
 
 Templates
----------
+=========
 
 Mặc định mọi trang sẽ gọi vào ``common/page.tpl`` như vậy bạn sẽ viết template chung cho toàn bộ pages vào file này, tuy nhiên nếu bạn muốn linh hoạt hơn bằng cách viết template cho các page khác nhau vào các file khác nhau, chúng ta sẽ khai báo thêm templates vào thẻ ``<templates``.
 
@@ -170,14 +264,14 @@ Mỗi page có template riêng biệt được khai báo vào thẻ ``<page``, �
 
 **Lọc page bởi tham số**
 
-Bạn cũng có thể sử dụng nhiều templates cho 1 trang, bằng cách lọc tham số URL. Ở ví dụ trên, page ``content/content`` sẽ hiển thị nội dung trang có id=1, khai báo tham số ``content_id`` vào thuộc tính ``args``.
+Bạn cũng có thể sử dụng nhiều templates cho 1 trang, bằng cách lọc tham số URL. Ở ví dụ trên, page ``content/content`` sẽ hiển thị nội dung trang có *id=1*, khai báo tham số ``content_id`` vào thuộc tính ``args``.
 
 ::
 
 	<page context="content/content" args="content_id=1" template="common/page-aboutus.tpl"></page>
 
-Nếu nhiều hơn một tham số, các tham số cách nhau bởi dấu & vd: `arg1=value1&arg2=value2`
-Viết thêm mỗi template mới, bạn cần khai báo vào ``<custom_templates``.
+Nếu nhiều hơn một tham số, các tham số cách nhau bởi dấu ``&`` vd: `arg1=value1&arg2=value2`
+Viết thêm mỗi template (.tpl) mới, bạn cần khai báo vào ``<custom_templates``.
 
 ::
 
@@ -190,7 +284,7 @@ Viết thêm mỗi template mới, bạn cần khai báo vào ``<custom_template
 	</custom_templates>
 
 Layout
-------
+======
 
 Vinacart có một số templates layout mặc định sau:
 
@@ -213,10 +307,10 @@ Viết vào file cấu hình theme (theme.xml) nội dung sau:
 ::
 
 	<layout>
-		<page name="Category Layout" context="product/category" param="all_categories" value="1" default="1">
+		<page name="Category Layout" context="product/category" default="1">
 			<apply context="product/manufacturer" />
 		</page>
-		<page name="Contact Page" context="content/contact" param="contact_page" value="1" default="1">
+		<page name="Contact Page" context="content/contact" default="1">
 			
 		</page>
 	</layout>
@@ -225,20 +319,20 @@ Tham số:
 
 - ``name`` - Tên hiển thị layout.
 - ``context`` - địa chỉ page.
-- ``param`` - tên tùy ý không dấu cách và không được trùng với các layout khác.
+.. ``param`` - tên tùy ý không dấu cách và không được trùng với các layout khác.
 
 Các tham số khác để mặc định.
 Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ con ``<apply`` giống như trên.
 
 Blocks
-------
+======
 
 Có 2 loại block:
 
 - parent block: gồm ``header``, ``header_bottom``, ``column_left``, ``column_right``, ``content_top``, ``content_bottom``
 - child block: là các blocks con chứa trong parent block. vd: latest, bestsellers, account,..
 
-Vinacart quy định các child blocks giới hạn hiển thị trong parent blocks. VD, block bestsellers mặc định chỉ hiển thị ở ``column_left``, ``column_right``, ``content_bottom``.
+Vinacart quy định các child blocks giới hạn hiển thị trong parent blocks. VD, block *bestsellers* mặc định chỉ hiển thị ở ``column_left``, ``column_right``, ``content_bottom``.
 
 Tuy nhiên bạn có thể mở rộng hiển thị các blocks ở vị trí parent blocks khác để thuận lợi trong việc phát triển theme. Để làm điều này bạn khai báo vào thẻ ``<blocks``. Xem ví dụ dưới đây:
 
@@ -286,7 +380,7 @@ Tuy nhiên bạn có thể mở rộng hiển thị các blocks ở vị trí pa
 		</block>
 	</blocks>
 
-Chi tiết:
+*Giải thích*:
 
 - ``block_txt_id`` - txt id của block.
 - ``controller`` -  controller hiển thị nội dung block.
@@ -300,11 +394,50 @@ Ok, quay trở lại trang layout trong admin, chọn layout trong danh sách b�
 .. image:: images/vnc-layouts.jpg
 
 
-Sidebar block
-=============
+Cấu hình block
+^^^^^^^^^^^^^^
 
-Giống hầu hết các cms hiện nay như wordpress, bạn có thể khai báo giao diện sidebar dễ dàng với vinacart. Thiết lập trong file cấu hình (``theme.xml``)
+Tất cả các blocks sẽ sử dụng chung cấu hình của vinacart mà bạn đã thiết lập (tại Admin URL: /index.php?rt=setting/setting/all).
+Đôi khi một vài block sẽ cần thay đổi lại giá trị, chẳng hạn như block bestseller, latest nằm ở cột trái (column_left) kích thước ảnh theo thiết kế theme là nhỏ hơn so với hiển thị products ở trang chủ, trang danh mục sản phẩm. 
 
+Kích thước ảnh này quy định bởi cấu hình *config_image_product_width*, *config_image_product_height*. Bạn có thể dễ dàng thay đổi thông số này áp dụng cho parent block & child block, giống như sau:
+::
+
+	<blocks>
+		<block>
+			<block_txt_id><![CDATA[column_left]]></block_txt_id>
+			<controller>common/column_left</controller>
+			
+			<config>
+				<param name="config_image_product_width"><![CDATA[100]]></param>
+				<param name="config_image_product_height"><![CDATA[95]]></param>
+			</config>
+		</block>
+	</blocks>
+
+Lưu ý: với mỗi kích thước tạo ra sẽ tạo thêm ảnh mới tương ứng với kích thước đó, cho nên hãy cẩn trọng để tránh gây thừa dung lượng. Nếu bạn sử dụng nhiều lần giá trị cấu hình cách tốt nhất thiết vào biến để tránh viết nhầm giá trị.
+::
+
+	<configuration>
+        <item name="image_product_width_small" value="100"/>
+        <item name="image_product_height_small" value="95"/>
+    </configuration>
+	<block>
+		..
+		<config>
+	        <param name="config_image_product_width"><![CDATA[image_product_width_small]]></param>
+	        <param name="config_image_product_height"><![CDATA[image_product_height_small]]></param>
+	    </config>
+	</block>
+
+
+
+Block Skin
+^^^^^^^^^^
+
+Kế thừa hầu hết các cms hiện nay như wordpress, bạn có thể khai báo giao diện sidebar dễ dàng với vinacart. Thiết lập trong file cấu hình (``theme.xml``)
+
+Khai báo các skin sử dụng cho theme:
 ::
 
 	<block_skins>
@@ -335,7 +468,7 @@ Giống hầu hết các cms hiện nay như wordpress, bạn có thể khai bá
         </skin>
     </block_skins>
 
-Áp dụng sidebar vào parent block.
+Áp dụng skin vào parent block.
 
 ::
 
@@ -392,3 +525,13 @@ Giống hầu hết các cms hiện nay như wordpress, bạn có thể khai bá
 	</blocks>
 
 Chú ý: giá trị biến ``before_title``, ``after_title`` ở thẻ ``<param`` tương ứng với biến ``%2$s``.
+
+Trong file .tpl để hiển thị skin chúng ta có các biến:
+::
+
+	{{before_widget}}
+		..
+		{{ before_title}}{{ heading_title }} {{ after_title}}
+		..
+	{{after_widget}}
+

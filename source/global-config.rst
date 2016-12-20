@@ -5,8 +5,8 @@ Cài đặt chung
 Credential
 ==========
 
-Các website trong hệ thống sử dụng chung các tài khoản cho các dịch vụ ngoài, như gửi mail..
-Các tài khoản này được liệt kê trong file ``config/credentials.php``
+Sử dụng các tài khoản cho các dịch vụ ngoài, như gửi mail..
+Các tài khoản này được liệt kê trong file ``system/config/credentials.php``
 ::
 
 	<?php
@@ -32,5 +32,6 @@ Các tài khoản này được liệt kê trong file ``config/credentials.php``
 	    )
 	);
 
-Chúng tôi bảo trì cập nhật các tài khoản để đảm bảo các website hoạt động tốt, dùng chung các tài khoản đó. Để nạp tài khoản bằng cách sửa lại file ``credentials.php``. Sau đó xóa cache của website hoặc truy cập **System > settings > My Settings**.
+.. Chúng tôi bảo trì cập nhật các tài khoản để đảm bảo các website hoạt động tốt, dùng chung các tài khoản đó. 
+Để nạp tài khoản bằng cách sửa lại file ``credentials.php``. Sau đó xóa cache của website hoặc truy cập **System > settings > My Settings**.
 Chọn **Install & configure** nhấn tab **Refresh Extensions** và nhấn vào Refresh 'Credentials'.
