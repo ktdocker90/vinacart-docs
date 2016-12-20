@@ -93,16 +93,9 @@
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Template</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#bien-su-dung-trong-template">Biến sử dụng trong template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#xuat-ban-template">Xuất bản template</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#publish-template">Publish template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#unpublish-template">Unpublish template</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="form.html">Sử dụng Form</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backup-data.html">Backup dữ liệu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Sửa lỗi</a></li>
 </ul>
 
             
@@ -171,25 +164,9 @@
 </div>
 <p>Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent block (column_left, ..))</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">//parent block, child block index</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hw</span><span class="o">-&gt;</span><span class="na">_view</span><span class="o">-&gt;</span><span class="na">block</span><span class="p">(</span><span class="s1">&#39;header_bottom&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-<span class="nv">$this</span><span class="o">-&gt;</span><span class="na">hw</span><span class="o">-&gt;</span><span class="na">_view</span><span class="o">-&gt;</span><span class="na">block</span><span class="p">(</span><span class="s1">&#39;footer_top&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">_view</span><span class="o">.</span><span class="nx">block</span><span class="p">(</span><span class="s1">&#39;header_bottom&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">_view</span><span class="o">.</span><span class="nx">block</span><span class="p">(</span><span class="s1">&#39;footer_top&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
-</div>
-</div>
-<div class="section" id="xuat-ban-template">
-<h2>Xuất bản template<a class="headerlink" href="#xuat-ban-template" title="Permalink to this headline">¶</a></h2>
-<p>Mỗi một site tạo ra sẽ sử dụng một template riêng (ie, <code class="docutils literal"><span class="pre">mytheme</span></code>) bên cạnh template mặc định (<code class="docutils literal"><span class="pre">default</span></code>) của hệ thống.
-Template mới sử dụng trong App sẽ có ID phân biệt, để xuất bản theme lên store.
-Lưu ý: Một site có thể cài đặt nhiều template nhưng chỉ kích hoạt sử dụng một template.</p>
-<p>ID này được sinh ra khi site được tạo hoàn tất. Để publish theme bạn cần kiểm tra xem ID của theme được tạo ra hay chưa, nếu chưa báo lỗi với admin.</p>
-<div class="section" id="publish-template">
-<h3>Publish template<a class="headerlink" href="#publish-template" title="Permalink to this headline">¶</a></h3>
-<p>Để publish theme, bạn cần kích hoạt lại template đang push lên store (không phải default theme hoặc nếu trường hợp site có cài nhiều template). TH xóa theme bạn cũng pải cần kích hoạt lại theme ở backend site, để thiết lập lại theme muốn publish lên store.</p>
-<p><em>Chú ý</em>: Nếu không làm đúng quy trình sẽ phát sinh lỗi trong quá trình publish template.</p>
-</div>
-<div class="section" id="unpublish-template">
-<h3>Unpublish template<a class="headerlink" href="#unpublish-template" title="Permalink to this headline">¶</a></h3>
-<p>Sau khi publish theme thành công hay một khi theme đã được xuất bản, bạn có thể gỡ bỏ ra khỏi store. Để thực hiện truy cập trang app, ở tab <strong>Settings</strong> mục <strong>Publish Theme</strong> nhấn vào <strong>Delete from store</strong> từ dropdown.</p>
 </div>
 </div>
 </div>

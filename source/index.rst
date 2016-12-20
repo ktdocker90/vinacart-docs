@@ -18,6 +18,8 @@ Theo dõi bán hàng, quản lý khách hàng, tùy biến các văn bản, thay
 Sau khi đọc hướng dẫn này, bạn sẽ rất thoải mái với việc sử dụng các VinaCart để thiết lập cửa hàng trực tuyến của bạn và duy trì nó theo thời gian.
 Nếu bạn là nhà phát triển, bạn sẽ sẵn sàng để mã với VinaCart và phát triển các phần mở rộng cho trang web của bạn hoặc khách hàng của bạn.
 
+.. backup-data
+.. troubleshooting
 
 Nội dung:
 
@@ -32,5 +34,3 @@ Nội dung:
    intro-layout-blocks
    template
    form
-   backup-data
-   troubleshooting
