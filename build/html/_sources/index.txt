@@ -26,6 +26,7 @@ Nội dung:
 
    cai-dat-vinacart
    vinacart-theme-structure
+   getting-start
    theme-config
    global-config
    intro-layout-blocks

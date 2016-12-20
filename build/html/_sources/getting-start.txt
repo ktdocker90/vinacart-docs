@@ -1,0 +1,54 @@
+=============
+Getting start
+=============
+
+Tạo theme mới có tên (vd: theme1) bằng cách nhân bản *mytheme/*.
+
+Đổi tên file và thư mục
+=======================
+
+Chú ý sau khi copy theme mẫu, bạn cần đổi tên thư mục và file cho khớp với theme mới (theme1). Đổi ``mytheme`` thành ``theme1`` với files và thư mục sau:
+
+- admin/language/english/mytheme/
+- admin/language/vietnamese/mytheme/
+
+- storefront/language/english/mytheme
+- storefront/language/vietnamese/mytheme
+- storefront/view/mytheme
+
+Sửa nội dung
+============
+Tìm và đổi tên ``mytheme`` thành ``theme1``.
+
+File cấu hình theme
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Tìm và đổi tên ``mytheme`` thành ``theme1`` trong file config.xml và main.php
+
+File cài đặt
+^^^^^^^^^^^^
+Tương tự cho file uninstall.sql
+
+Ngôn ngữ
+^^^^^^^^
+- admin/language/english/theme1/english.xml
+- admin/language/vietnamese/theme1/vietnamese.xml
+
+Sử dụng file ngôn ngữ cho cả admin & frontend. Admin dành cho trang cấu hình extension. Tiến hành sửa 2 file trên:
+::
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<definitions>
+	    <definition>
+	        <key>theme1_name</key><!-- mytheme -> theme1 -->
+	        <value><![CDATA[my theme]]></value>
+	    </definition>
+	    ...
+
+core/ThemeExtension.php
+^^^^^^^^^^^^^^^^^^^^^^^
+Đây là file gọi đầu tiên khi nạp theme. Trong file khai báo class có tên ``Extension<theme_name>``. 
+vd: mytheme -> ExtensionMytheme, theme1 -> ExtensionTheme1
+
+Sửa tên class phù hợp với tên theme của bạn.
+
+Ok bước này đã hoàn tất, tiếp theo chúng ta sẽ tập trung viết template cho theme này.
