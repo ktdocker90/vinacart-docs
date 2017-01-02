@@ -594,6 +594,7 @@ Trong file .tpl để hiển thị skin chúng ta có các biến:
 Khi đặt block ở 2 vị trí khác nhau mà chúng đều hiển thị vào một file, vd: bestseller block ở column_left & column_right đều gọi vào bestseller.tpl. Trường hợp này bạn cũng có thể sử dụng 2 template khác nhau cho một block ở các vị trí parent khác nhau và khai báo sử dụng nhiều skin. Chúng ta sẽ thay đổi skin với nhiều vị trí, như sau:
 
 ::
+
 	<skin>
 		<_AI_>
 			<name><![CDATA[sb]]></name>

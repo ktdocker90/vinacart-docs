@@ -681,40 +681,28 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
 </pre></div>
 </div>
 <p>Khi đặt block ở 2 vị trí khác nhau mà chúng đều hiển thị vào một file, vd: bestseller block ở column_left &amp; column_right đều gọi vào bestseller.tpl. Trường hợp này bạn cũng có thể sử dụng 2 template khác nhau cho một block ở các vị trí parent khác nhau và khai báo sử dụng nhiều skin. Chúng ta sẽ thay đổi skin với nhiều vị trí, như sau:</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd><dl class="first docutils">
-<dt>&lt;skin&gt;</dt>
-<dd><dl class="first docutils">
-<dt>&lt;_AI_&gt;</dt>
-<dd><p class="first">&lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
-&lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
-&lt;template&gt;&lt;![CDATA[blocks/bestseller_slides.tpl]]&gt;&lt;/template&gt;
-&lt;values&gt;</p>
-<blockquote>
-<div>&lt;param name=&#8221;before_title&#8221;&gt;&lt;![CDATA[]]&gt;&lt;/param&gt;
-&lt;param name=&#8221;before_widget&#8221;&gt;&lt;![CDATA[special-product best-sale-product]]&gt;&lt;/param&gt;</div></blockquote>
-<p class="last">&lt;/values&gt;</p>
-</dd>
-</dl>
-<p>&lt;/_AI_&gt;
-&lt;_AI_ &gt;</p>
-<blockquote>
-<div><p>&lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
-&lt;position&gt;&lt;![CDATA[column_right]]&gt;&lt;/position&gt;
-&lt;template&gt;&lt;![CDATA[blocks/bestseller.tpl]]&gt;&lt;/template&gt;
-&lt;values&gt;</p>
-<blockquote>
-<div>&lt;param name=&#8221;before_title&#8221;&gt;&lt;![CDATA[]]&gt;&lt;/param&gt;
-&lt;param name=&#8221;before_widget&#8221;&gt;&lt;![CDATA[special-product new-product]]&gt;&lt;/param&gt;</div></blockquote>
-<p>&lt;/values&gt;</p>
-</div></blockquote>
-<p class="last">&lt;/_AI_&gt;</p>
-</dd>
-</dl>
-<p class="last">&lt;/skin&gt;</p>
-</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;skin&gt;
+        &lt;_AI_&gt;
+                &lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
+                &lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
+                &lt;template&gt;&lt;![CDATA[blocks/bestseller_slides.tpl]]&gt;&lt;/template&gt;
+                &lt;values&gt;
+                        &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[]]&gt;&lt;/param&gt;
+                        &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[special-product best-sale-product]]&gt;&lt;/param&gt;
+                &lt;/values&gt;
+        &lt;/_AI_&gt;
+        &lt;_AI_ &gt;
+                &lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
+                &lt;position&gt;&lt;![CDATA[column_right]]&gt;&lt;/position&gt;
+                &lt;template&gt;&lt;![CDATA[blocks/bestseller.tpl]]&gt;&lt;/template&gt;
+                &lt;values&gt;
+                        &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[]]&gt;&lt;/param&gt;
+                        &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[special-product new-product]]&gt;&lt;/param&gt;
+                &lt;/values&gt;
+        &lt;/_AI_&gt;
+&lt;/skin&gt;
+</pre></div>
+</div>
 <p>Chú ý: <code class="docutils literal"><span class="pre">&lt;_AI_&gt;</span></code> alias của <code class="docutils literal"><span class="pre">&lt;__AUTO_INCREASE__&gt;</span></code></p>
 </div>
 </div>
