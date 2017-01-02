@@ -90,6 +90,7 @@
 <li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Cấu hình theme</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings">Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#assets">Assets</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#thu-vien">Thư viện</a></li>
 </ul>
@@ -232,6 +233,34 @@ Ví dụ:</p>
 - sample_data: tên dữ liệu mẫu bạn đang viết theme này. Danh sách dữ liệu mẫu gồm có: thoitrang, dulich,...(Bạn có thể bổ xung tùy ý, lưu ý không viết cách &amp; chứa ký tự UTF-8).
 - name: tên thư mục theme.</p>
 <p>Xem tiếp phần dưới sẽ giải thích chi tiết cách dùng cấu hình.</p>
+</div>
+<div class="section" id="settings">
+<h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
+<p>Phần này sẽ sửa lại toàn bộ thông số cài đặt của Vinacart được lưu vào database. Trên giao diện quản trị, để sửa các cài đặt này bạn truy cập tại <code class="docutils literal"><span class="pre">?rt=setting/setting/all</span></code> . Do mỗi theme giá trị cài đặt cấu hình có thể khác nhau tùy vào giao diện theme mà tùy chỉnh cho phù hợp, thay vì sửa trực tiếp trong admin bạn có thể sửa trực tiếp các giá trị đó ở file theme.xml này.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;theme&gt;
+        &lt;settings&gt;
+        &lt;item name=&quot;config_storefront_api_status&quot; value=&quot;1&quot;/&gt;
+        &lt;item name=&quot;config_admin_api_status&quot; value=&quot;0&quot;/&gt;
+        &lt;item name=&quot;storefront_width&quot; value=&quot;80%&quot;/&gt;
+    &lt;/settings&gt;
+&lt;/theme&gt;
+</pre></div>
+</div>
+<p>Trường hợp lấy giá trị khai báo ở <code class="docutils literal"><span class="pre">&lt;configuration</span></code>.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;theme&gt;
+        &lt;configuration&gt;
+        &lt;item name=&quot;image_product_width_small&quot; value=&quot;100&quot;/&gt;
+        &lt;item name=&quot;image_product_height_small&quot; value=&quot;95&quot;/&gt;
+    &lt;/configuration&gt;
+        &lt;settings&gt;
+        &lt;item name=&quot;config_image_product_height&quot; value=&quot;image_product_height_small&quot;/&gt;
+    &lt;/settings&gt;
+&lt;/theme&gt;
+</pre></div>
+</div>
+<p>Với cách trên sẽ hữu ích khi export/import theme.</p>
 </div>
 <div class="section" id="assets">
 <h2>Assets<a class="headerlink" href="#assets" title="Permalink to this headline">¶</a></h2>
@@ -495,6 +524,7 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
 Đôi khi một vài block sẽ cần thay đổi lại giá trị, chẳng hạn như block bestseller, latest nằm ở cột trái (column_left) kích thước ảnh theo thiết kế theme là nhỏ hơn so với hiển thị products ở trang chủ, trang danh mục sản phẩm.</p>
 <p>Kích thước ảnh này quy định bởi cấu hình <em>config_image_product_width</em>, <em>config_image_product_height</em>. Bạn có thể dễ dàng thay đổi thông số này áp dụng cho parent block &amp; child block, giống như sau:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;blocks&gt;
+        &lt;!-- apply to parent blocks --&gt;
         &lt;block&gt;
                 &lt;block_txt_id&gt;&lt;![CDATA[column_left]]&gt;&lt;/block_txt_id&gt;
                 &lt;controller&gt;common/column_left&lt;/controller&gt;
@@ -504,6 +534,17 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
                         &lt;param name=&quot;config_image_product_height&quot;&gt;&lt;![CDATA[95]]&gt;&lt;/param&gt;
                 &lt;/config&gt;
         &lt;/block&gt;
+        &lt;!-- apply for block --&gt;
+        &lt;block&gt;
+    &lt;block_txt_id&gt;&lt;![CDATA[latest]]&gt;&lt;/block_txt_id&gt;
+    &lt;controller&gt;blocks/latest&lt;/controller&gt;
+
+    &lt;config&gt;
+        &lt;param name=&quot;config_image_product_width&quot;&gt;&lt;![CDATA[product_small_image_width]]&gt;&lt;/param&gt;
+        &lt;param name=&quot;config_image_product_height&quot;&gt;&lt;![CDATA[product_small_image_height]]&gt;&lt;/param&gt;
+    &lt;/config&gt;
+        &lt;/block&gt;
+
 &lt;/blocks&gt;
 </pre></div>
 </div>
@@ -521,6 +562,38 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
     &lt;/block&gt;
 </pre></div>
 </div>
+<p>Bạn cũng có thể thay đổi giá trị cài đặt ở từng vị trí parent, bằng cách khai báo giá trị trong thẻ <code class="docutils literal"><span class="pre">&lt;skin&gt;</span></code>.</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><blockquote class="first">
+<div><p>&lt;skin&gt;
+&lt;_AI_&gt;</p>
+<blockquote>
+<div><p>&lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
+&lt;position&gt;&lt;![CDATA[content_bottom]]&gt;&lt;/position&gt;
+&lt;config&gt;</p>
+<blockquote>
+<div>&lt;param name=&#8221;blog_entry_image_width&#8221;&gt;&lt;![CDATA[blog_entry_image_width]]&gt;&lt;/param&gt;
+&lt;param name=&#8221;blog_entry_image_height&#8221;&gt;&lt;![CDATA[blog_entry_image_height]]&gt;&lt;/param&gt;</div></blockquote>
+<p>&lt;/config&gt;</p>
+</div></blockquote>
+<p>&lt;/_AI_&gt;
+&lt;_AI_&gt;</p>
+<blockquote>
+<div><p>&lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
+&lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
+&lt;config&gt;</p>
+<blockquote>
+<div>&lt;param name=&#8221;blog_entry_image_width&#8221;&gt;&lt;![CDATA[blog_entry_small_image_width]]&gt;&lt;/param&gt;
+&lt;param name=&#8221;blog_entry_image_height&#8221;&gt;&lt;![CDATA[blog_entry_small_image_height]]&gt;&lt;/param&gt;</div></blockquote>
+<p>&lt;/config&gt;</p>
+</div></blockquote>
+<p>&lt;/_AI_&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/skin&gt;</p>
+</dd>
+</dl>
+<p>Xem thêm block skin ở phần dưới.</p>
 </div>
 <div class="section" id="block-skin">
 <h3>Block Skin<a class="headerlink" href="#block-skin" title="Permalink to this headline">¶</a></h3>
@@ -569,17 +642,6 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
                 &lt;/skin&gt;
         &lt;/block&gt;
         &lt;block&gt;
-                &lt;block_txt_id&gt;&lt;![CDATA[header_bottom]]&gt;&lt;/block_txt_id&gt;
-                &lt;controller&gt;common/header_bottom&lt;/controller&gt;
-                &lt;skin&gt;
-                        &lt;name&gt;&lt;![CDATA[skin1]]&gt;&lt;/name&gt;
-                        &lt;values&gt;
-                                &lt;param name=&quot;before_title&quot;&gt;&lt;![CDATA[block1]]&gt;&lt;/param&gt;
-                                &lt;param name=&quot;before_widget&quot;&gt;&lt;![CDATA[block_1]]&gt;&lt;/param&gt;
-                        &lt;/values&gt;
-                &lt;/skin&gt;
-        &lt;/block&gt;
-        &lt;block&gt;
                 &lt;block_txt_id&gt;&lt;![CDATA[column_left]]&gt;&lt;/block_txt_id&gt;
                 &lt;controller&gt;common/column_left&lt;/controller&gt;
                 &lt;skin&gt;
@@ -618,6 +680,42 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
 <span class="p">{{</span><span class="n">after_widget</span><span class="p">}}</span>
 </pre></div>
 </div>
+<p>Khi đặt block ở 2 vị trí khác nhau mà chúng đều hiển thị vào một file, vd: bestseller block ở column_left &amp; column_right đều gọi vào bestseller.tpl. Trường hợp này bạn cũng có thể sử dụng 2 template khác nhau cho một block ở các vị trí parent khác nhau và khai báo sử dụng nhiều skin. Chúng ta sẽ thay đổi skin với nhiều vị trí, như sau:</p>
+<dl class="docutils">
+<dt>::</dt>
+<dd><dl class="first docutils">
+<dt>&lt;skin&gt;</dt>
+<dd><dl class="first docutils">
+<dt>&lt;_AI_&gt;</dt>
+<dd><p class="first">&lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
+&lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
+&lt;template&gt;&lt;![CDATA[blocks/bestseller_slides.tpl]]&gt;&lt;/template&gt;
+&lt;values&gt;</p>
+<blockquote>
+<div>&lt;param name=&#8221;before_title&#8221;&gt;&lt;![CDATA[]]&gt;&lt;/param&gt;
+&lt;param name=&#8221;before_widget&#8221;&gt;&lt;![CDATA[special-product best-sale-product]]&gt;&lt;/param&gt;</div></blockquote>
+<p class="last">&lt;/values&gt;</p>
+</dd>
+</dl>
+<p>&lt;/_AI_&gt;
+&lt;_AI_ &gt;</p>
+<blockquote>
+<div><p>&lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
+&lt;position&gt;&lt;![CDATA[column_right]]&gt;&lt;/position&gt;
+&lt;template&gt;&lt;![CDATA[blocks/bestseller.tpl]]&gt;&lt;/template&gt;
+&lt;values&gt;</p>
+<blockquote>
+<div>&lt;param name=&#8221;before_title&#8221;&gt;&lt;![CDATA[]]&gt;&lt;/param&gt;
+&lt;param name=&#8221;before_widget&#8221;&gt;&lt;![CDATA[special-product new-product]]&gt;&lt;/param&gt;</div></blockquote>
+<p>&lt;/values&gt;</p>
+</div></blockquote>
+<p class="last">&lt;/_AI_&gt;</p>
+</dd>
+</dl>
+<p class="last">&lt;/skin&gt;</p>
+</dd>
+</dl>
+<p>Chú ý: <code class="docutils literal"><span class="pre">&lt;_AI_&gt;</span></code> alias của <code class="docutils literal"><span class="pre">&lt;__AUTO_INCREASE__&gt;</span></code></p>
 </div>
 </div>
 </div>

@@ -30,9 +30,53 @@ Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent bloc
 
 .. code-block:: php
 
-	//parent block, child block index
-	{{ vnc._view.block('header_bottom', 0) }}
-	{{ vnc._view.block('footer_top', 1) }}
+	//parent block, child block index: deprecated
+	{# vnc._view.block('header_bottom', 0) #}
+
+	{{ registry.get('_view').block('footer_top', 1) }}
+
+	#or short form using
+	{{ block('header_bottom', 0) }}
+
+	//get variable data from any block/page. note: make sure this block already loaded
+	{{ blockVar('blocks/bestseller','var1') }}
+	{% set categories = blockVar('pages/product/category', 'categories') %}
+	//or
+	{{ registry.get('_view').blockVar(..) }}
+
+	//for block
+	blockVar('blocks/bestseller', 'products')
+
+Form Field.
+
+::
+
+	{% set btn = review_button.vnc_getProperty('data') %}
+	<button class="button submit" title="{{ btn.title? btn.title : btn.text }}" type="submit">{{ btn.text }}</button>
+
+	# other way
+	<button class="button submit" title="{{ fieldValue(review_button,'title','text') }}" type="submit">{{ fieldValue(review_button,'text') }}</button>
+
+Debuging:
+
+::
+
+	//buitin function help you print value of any variable
+	{{ _print(..) }}
+
+URL:
+
+::
+
+	{{ html.getSEOURL('account/wishlist') }}
+
+Customer:
+
+::
+
+	//wishlist count
+	{{ customer.getWishList()|length }}
+
 
 ..	Xuất bản template
 	=================

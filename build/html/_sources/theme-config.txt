@@ -88,6 +88,39 @@ Khai báo các thông tin cấu hình ở thẻ ``<configuration`` như version,
 
 Xem tiếp phần dưới sẽ giải thích chi tiết cách dùng cấu hình.
 
+Settings
+========
+
+Phần này sẽ sửa lại toàn bộ thông số cài đặt của Vinacart được lưu vào database. Trên giao diện quản trị, để sửa các cài đặt này bạn truy cập tại ``?rt=setting/setting/all`` . Do mỗi theme giá trị cài đặt cấu hình có thể khác nhau tùy vào giao diện theme mà tùy chỉnh cho phù hợp, thay vì sửa trực tiếp trong admin bạn có thể sửa trực tiếp các giá trị đó ở file theme.xml này.
+
+::
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<theme>
+		<settings>
+	        <item name="config_storefront_api_status" value="1"/>
+	        <item name="config_admin_api_status" value="0"/>
+	        <item name="storefront_width" value="80%"/>
+	    </settings>
+	</theme>
+
+Trường hợp lấy giá trị khai báo ở ``<configuration``.
+
+::
+
+	<?xml version="1.0" encoding="UTF-8"?>
+	<theme>
+		<configuration>
+	        <item name="image_product_width_small" value="100"/>
+	        <item name="image_product_height_small" value="95"/>
+	    </configuration>
+		<settings>
+	        <item name="config_image_product_height" value="image_product_height_small"/>
+	    </settings>
+	</theme>
+
+Với cách trên sẽ hữu ích khi export/import theme.
+
 Assets
 ======
 
@@ -404,6 +437,7 @@ Kích thước ảnh này quy định bởi cấu hình *config_image_product_wi
 ::
 
 	<blocks>
+		<!-- apply to parent blocks -->
 		<block>
 			<block_txt_id><![CDATA[column_left]]></block_txt_id>
 			<controller>common/column_left</controller>
@@ -413,6 +447,17 @@ Kích thước ảnh này quy định bởi cấu hình *config_image_product_wi
 				<param name="config_image_product_height"><![CDATA[95]]></param>
 			</config>
 		</block>
+		<!-- apply for block -->
+		<block>
+            <block_txt_id><![CDATA[latest]]></block_txt_id>
+            <controller>blocks/latest</controller>
+            
+            <config>
+                <param name="config_image_product_width"><![CDATA[product_small_image_width]]></param>
+                <param name="config_image_product_height"><![CDATA[product_small_image_height]]></param>
+            </config>
+		</block>
+
 	</blocks>
 
 Lưu ý: với mỗi kích thước tạo ra sẽ tạo thêm ảnh mới tương ứng với kích thước đó, cho nên hãy cẩn trọng để tránh gây thừa dung lượng. Nếu bạn sử dụng nhiều lần giá trị cấu hình cách tốt nhất thiết vào biến để tránh viết nhầm giá trị.
@@ -430,7 +475,29 @@ Lưu ý: với mỗi kích thước tạo ra sẽ tạo thêm ảnh mới tươn
 	    </config>
 	</block>
 
+Bạn cũng có thể thay đổi giá trị cài đặt ở từng vị trí parent, bằng cách khai báo giá trị trong thẻ ``<skin>``.
 
+::
+	<skin>
+        <_AI_>
+            <name><![CDATA[sb_flat]]></name>
+            <position><![CDATA[content_bottom]]></position>
+            <config>
+                <param name="blog_entry_image_width"><![CDATA[blog_entry_image_width]]></param>
+                <param name="blog_entry_image_height"><![CDATA[blog_entry_image_height]]></param>
+            </config>
+        </_AI_>
+        <_AI_>
+            <name><![CDATA[sb]]></name>
+            <position><![CDATA[column_left]]></position>
+            <config>
+                <param name="blog_entry_image_width"><![CDATA[blog_entry_small_image_width]]></param>
+                <param name="blog_entry_image_height"><![CDATA[blog_entry_small_image_height]]></param>
+            </config>
+        </_AI_>
+    </skin>
+
+Xem thêm block skin ở phần dưới.
 
 Block Skin
 ^^^^^^^^^^
@@ -485,17 +552,6 @@ Khai báo các skin sử dụng cho theme:
 			</skin>
 		</block>
 		<block>
-			<block_txt_id><![CDATA[header_bottom]]></block_txt_id>
-			<controller>common/header_bottom</controller>
-			<skin>
-				<name><![CDATA[skin1]]></name>
-				<values>
-					<param name="before_title"><![CDATA[block1]]></param>
-					<param name="before_widget"><![CDATA[block_1]]></param>
-				</values>
-			</skin>
-		</block>
-		<block>
 			<block_txt_id><![CDATA[column_left]]></block_txt_id>
 			<controller>common/column_left</controller>
 			<skin>
@@ -535,3 +591,28 @@ Trong file .tpl để hiển thị skin chúng ta có các biến:
 		..
 	{{after_widget}}
 
+Khi đặt block ở 2 vị trí khác nhau mà chúng đều hiển thị vào một file, vd: bestseller block ở column_left & column_right đều gọi vào bestseller.tpl. Trường hợp này bạn cũng có thể sử dụng 2 template khác nhau cho một block ở các vị trí parent khác nhau và khai báo sử dụng nhiều skin. Chúng ta sẽ thay đổi skin với nhiều vị trí, như sau:
+
+::
+	<skin>
+		<_AI_>
+			<name><![CDATA[sb]]></name>
+			<position><![CDATA[column_left]]></position>
+			<template><![CDATA[blocks/bestseller_slides.tpl]]></template>
+			<values>
+				<param name="before_title"><![CDATA[]]></param>
+				<param name="before_widget"><![CDATA[special-product best-sale-product]]></param>
+			</values>
+		</_AI_>
+		<_AI_ >
+			<name><![CDATA[sb_flat]]></name>
+			<position><![CDATA[column_right]]></position>
+			<template><![CDATA[blocks/bestseller.tpl]]></template>
+			<values>
+				<param name="before_title"><![CDATA[]]></param>
+				<param name="before_widget"><![CDATA[special-product new-product]]></param>
+			</values>
+		</_AI_>
+	</skin>
+
+Chú ý: ``<_AI_>`` alias của ``<__AUTO_INCREASE__>``

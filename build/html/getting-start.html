@@ -103,8 +103,6 @@
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
 <li class="toctree-l1"><a class="reference internal" href="form.html">Sử dụng Form</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backup-data.html">Backup dữ liệu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Sửa lỗi</a></li>
 </ul>
 
             
@@ -157,7 +155,9 @@
 <p>Chú ý sau khi copy theme mẫu, bạn cần đổi tên thư mục và file cho khớp với theme mới (theme1). Đổi <code class="docutils literal"><span class="pre">mytheme</span></code> thành <code class="docutils literal"><span class="pre">theme1</span></code> với files và thư mục sau:</p>
 <ul class="simple">
 <li>admin/language/english/mytheme/</li>
+<li>admin/language/english/mytheme/mytheme.xml</li>
 <li>admin/language/vietnamese/mytheme/</li>
+<li>admin/language/vietnamese/mytheme/mytheme.xml</li>
 <li>storefront/language/english/mytheme</li>
 <li>storefront/language/vietnamese/mytheme</li>
 <li>storefront/view/mytheme</li>
@@ -177,8 +177,8 @@
 <div class="section" id="ngon-ngu">
 <h3>Ngôn ngữ<a class="headerlink" href="#ngon-ngu" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>admin/language/english/theme1/english.xml</li>
-<li>admin/language/vietnamese/theme1/vietnamese.xml</li>
+<li>admin/language/english/theme1/theme1.xml</li>
+<li>admin/language/vietnamese/theme1/theme1.xml</li>
 </ul>
 <p>Sử dụng file ngôn ngữ cho cả admin &amp; frontend. Admin dành cho trang cấu hình extension. Tiến hành sửa 2 file trên:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;

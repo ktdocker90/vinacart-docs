@@ -10,7 +10,9 @@ Tạo theme mới có tên (vd: theme1) bằng cách nhân bản *mytheme/*.
 Chú ý sau khi copy theme mẫu, bạn cần đổi tên thư mục và file cho khớp với theme mới (theme1). Đổi ``mytheme`` thành ``theme1`` với files và thư mục sau:
 
 - admin/language/english/mytheme/
+- admin/language/english/mytheme/mytheme.xml
 - admin/language/vietnamese/mytheme/
+- admin/language/vietnamese/mytheme/mytheme.xml
 
 - storefront/language/english/mytheme
 - storefront/language/vietnamese/mytheme
@@ -30,8 +32,8 @@ Tương tự cho file uninstall.sql
 
 Ngôn ngữ
 ^^^^^^^^
-- admin/language/english/theme1/english.xml
-- admin/language/vietnamese/theme1/vietnamese.xml
+- admin/language/english/theme1/theme1.xml
+- admin/language/vietnamese/theme1/theme1.xml
 
 Sử dụng file ngôn ngữ cho cả admin & frontend. Admin dành cho trang cấu hình extension. Tiến hành sửa 2 file trên:
 ::
