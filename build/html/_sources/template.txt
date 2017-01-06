@@ -31,12 +31,12 @@ Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent bloc
 .. code-block:: php
 
 	//parent block, child block index: deprecated
-	{# vnc._view.block('header_bottom', 0) #}
+	{# vnc._view.loadBlock('header_bottom', 0) #}
 
-	{{ registry.get('_view').block('footer_top', 1) }}
+	{{ registry.get('_view').loadBlock('footer_top', 1) }}
 
 	#or short form using
-	{{ block('header_bottom', 0) }}
+	{{ loadBlock('header_bottom', 0) }}
 
 	//get variable data from any block/page. note: make sure this block already loaded
 	{{ blockVar('blocks/bestseller','var1') }}
@@ -47,7 +47,24 @@ Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent bloc
 	//for block
 	blockVar('blocks/bestseller', 'products')
 
-Form Field.
+**Model**
+
+Truy cập model.
+
+::
+
+	getModel('catalog/product').getProduct('<ID>')
+
+**Components**.
+
+Ngoài các blocks có sẵn trong layout, chúng tôi cho phép nạp một số block mà không cần thêm vào layout. Thành phần hiển thị như comment,..
+
+::
+
+	{{ loadView('comment') }}
+	{{ loadView('social_button') }}
+
+**Form Field**.
 
 ::
 
@@ -57,20 +74,23 @@ Form Field.
 	# other way
 	<button class="button submit" title="{{ fieldValue(review_button,'title','text') }}" type="submit">{{ fieldValue(review_button,'text') }}</button>
 
-Debuging:
+**Debuging**:
 
 ::
 
 	//buitin function help you print value of any variable
 	{{ _print(..) }}
 
-URL:
+**URL**:
 
 ::
 
 	{{ html.getSEOURL('account/wishlist') }}
+	{{ html.getURL('account/wishlist') }}
+	{{ html.getSecureURL('account/wishlist') }}
+	{{ html.getHomeURL() }}
 
-Customer:
+**Customer**:
 
 ::
 

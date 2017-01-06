@@ -185,6 +185,19 @@ Bạn cũng có thể chỉ định ``page`` bằng tên địa chỉ seo url (a
 		<file type="js" bottom="1"><![CDATA[/assets/js/file1.js]]></file> --><!-- `buttom` attribute only for js file -->
 	</assets>
 
+**Load assets tùy vào ngữ cảnh**
+
+Đối với các file js/css/lib bạn muốn sử dụng cho một số block được gọi, vd quickview.css chỉ được chèn vào page khi hiển thị liệt kê sản phẩm. Trường hợp này không chỉ định vào page nào, mà có thể áp dụng cho nhiều trang. Xem ví dụ dưới:
+
+::
+
+	<assets context="productsListing=1">
+        <file type="css" ><![CDATA[/asset/css/quick_view_popup.css]]></file>
+        <file type="lib" ><![CDATA[zoom/cloud-zoom]]></file>
+    </assets>
+
+Ở ví dụ trên chúng ta sử dụng thuộc tính ``context`` thay cho thuộc tính ``page``. Chú ý: không sử dụng đồng thời 2 thuộc tính đó.
+
 Thư viện
 ^^^^^^^^
 

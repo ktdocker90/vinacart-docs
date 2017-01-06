@@ -307,6 +307,15 @@ Bạn có thể khai báo nhiều thẻ <code class="docutils literal"><span cla
 &lt;/assets&gt;
 </pre></div>
 </div>
+<p><strong>Load assets tùy vào ngữ cảnh</strong></p>
+<p>Đối với các file js/css/lib bạn muốn sử dụng cho một số block được gọi, vd quickview.css chỉ được chèn vào page khi hiển thị liệt kê sản phẩm. Trường hợp này không chỉ định vào page nào, mà có thể áp dụng cho nhiều trang. Xem ví dụ dưới:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;assets context=&quot;productsListing=1&quot;&gt;
+    &lt;file type=&quot;css&quot; &gt;&lt;![CDATA[/asset/css/quick_view_popup.css]]&gt;&lt;/file&gt;
+    &lt;file type=&quot;lib&quot; &gt;&lt;![CDATA[zoom/cloud-zoom]]&gt;&lt;/file&gt;
+&lt;/assets&gt;
+</pre></div>
+</div>
+<p>Ở ví dụ trên chúng ta sử dụng thuộc tính <code class="docutils literal"><span class="pre">context</span></code> thay cho thuộc tính <code class="docutils literal"><span class="pre">page</span></code>. Chú ý: không sử dụng đồng thời 2 thuộc tính đó.</p>
 <div class="section" id="thu-vien">
 <h3>Thư viện<a class="headerlink" href="#thu-vien" title="Permalink to this headline">¶</a></h3>
 <p>Vinacart tích hợp sẵn các thư viện javascript/jquery phổ biến. Với mục đích sử dụng tiện lợi, lý do một số thư viện bao gồm nhiều file css &amp; js, bạn sẽ khó quản lý khi chèn từng file đôi khi một số thư viện sử dụng chung file rất dễ bị nhân bản nếu không sử dụng cẩn thận. Do vậy cách dễ dàng nhất là sử dụng thư viện mặc định của vinacart (Chú ý: bạn cũng có thể khai báo thêm thư viện, nếu muốn).</p>

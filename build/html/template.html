@@ -164,12 +164,12 @@
 </div>
 <p>Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent block (column_left, ..))</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="c1">//parent block, child block index: deprecated</span>
-<span class="p">{</span><span class="c1"># vnc._view.block(&#39;header_bottom&#39;, 0) #}</span>
+<span class="p">{</span><span class="c1"># vnc._view.loadBlock(&#39;header_bottom&#39;, 0) #}</span>
 
-<span class="p">{{</span> <span class="nx">registry</span><span class="o">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;_view&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">block</span><span class="p">(</span><span class="s1">&#39;footer_top&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="nx">registry</span><span class="o">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;_view&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">loadBlock</span><span class="p">(</span><span class="s1">&#39;footer_top&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="p">}}</span>
 
 <span class="c1">#or short form using</span>
-<span class="p">{{</span> <span class="nx">block</span><span class="p">(</span><span class="s1">&#39;header_bottom&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="nx">loadBlock</span><span class="p">(</span><span class="s1">&#39;header_bottom&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="p">}}</span>
 
 <span class="c1">//get variable data from any block/page. note: make sure this block already loaded</span>
 <span class="p">{{</span> <span class="nx">blockVar</span><span class="p">(</span><span class="s1">&#39;blocks/bestseller&#39;</span><span class="p">,</span><span class="s1">&#39;var1&#39;</span><span class="p">)</span> <span class="p">}}</span>
@@ -181,7 +181,18 @@
 <span class="nx">blockVar</span><span class="p">(</span><span class="s1">&#39;blocks/bestseller&#39;</span><span class="p">,</span> <span class="s1">&#39;products&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Form Field.</p>
+<p><strong>Model</strong></p>
+<p>Truy cập model.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">getModel</span><span class="p">(</span><span class="s1">&#39;catalog/product&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getProduct</span><span class="p">(</span><span class="s1">&#39;&lt;ID&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Components</strong>.</p>
+<p>Ngoài các blocks có sẵn trong layout, chúng tôi cho phép nạp một số block mà không cần thêm vào layout. Thành phần hiển thị như comment,..</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">loadView</span><span class="p">(</span><span class="s1">&#39;comment&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">loadView</span><span class="p">(</span><span class="s1">&#39;social_button&#39;</span><span class="p">)</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>Form Field</strong>.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="nb">set</span> <span class="n">btn</span> <span class="o">=</span> <span class="n">review_button</span><span class="o">.</span><span class="n">vnc_getProperty</span><span class="p">(</span><span class="s1">&#39;data&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
 <span class="o">&lt;</span><span class="n">button</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;button submit&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ btn.title? btn.title : btn.text }}&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">btn</span><span class="o">.</span><span class="n">text</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
 
@@ -189,16 +200,19 @@
 <span class="o">&lt;</span><span class="n">button</span> <span class="n">class</span><span class="o">=</span><span class="s2">&quot;button submit&quot;</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;{{ fieldValue(review_button,&#39;title&#39;,&#39;text&#39;) }}&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span><span class="o">&gt;</span><span class="p">{{</span> <span class="n">fieldValue</span><span class="p">(</span><span class="n">review_button</span><span class="p">,</span><span class="s1">&#39;text&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="n">button</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Debuging:</p>
+<p><strong>Debuging</strong>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">buitin</span> <span class="n">function</span> <span class="n">help</span> <span class="n">you</span> <span class="nb">print</span> <span class="n">value</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">variable</span>
 <span class="p">{{</span> <span class="n">_print</span><span class="p">(</span><span class="o">..</span><span class="p">)</span> <span class="p">}}</span>
 </pre></div>
 </div>
-<p>URL:</p>
+<p><strong>URL</strong>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{{</span> <span class="n">html</span><span class="o">.</span><span class="n">getSEOURL</span><span class="p">(</span><span class="s1">&#39;account/wishlist&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">html</span><span class="o">.</span><span class="n">getURL</span><span class="p">(</span><span class="s1">&#39;account/wishlist&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">html</span><span class="o">.</span><span class="n">getSecureURL</span><span class="p">(</span><span class="s1">&#39;account/wishlist&#39;</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">html</span><span class="o">.</span><span class="n">getHomeURL</span><span class="p">()</span> <span class="p">}}</span>
 </pre></div>
 </div>
-<p>Customer:</p>
+<p><strong>Customer</strong>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">wishlist</span> <span class="n">count</span>
 <span class="p">{{</span> <span class="n">customer</span><span class="o">.</span><span class="n">getWishList</span><span class="p">()</span><span class="o">|</span><span class="n">length</span> <span class="p">}}</span>
 </pre></div>
