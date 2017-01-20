@@ -308,6 +308,20 @@ Mặc định mọi trang sẽ gọi vào ``common/page.tpl`` như vậy bạn s
 
 Mỗi page có template riêng biệt được khai báo vào thẻ ``<page``, địa chỉ page bởi thuộc tính ``context`` và địa chỉ .tpl xuất phát trong thư mục ``template`` của theme, khai báo vào thuộc tính ``template``.
 
+Trường hợp địa chỉ page (controller) có nhiều trang con, vd: contact page : ``content/contact`` khi gửi thành công sẽ chuyển sang trang ``content/contact/success``. Trang này chưa được khai báo ở trên do vậy mặc định sử dụng template page.tpl để hiển thị. Chúng ta sẽ gọi chung vào file .tpl của trang liên hệ đã khai báo ở trên như sau:
+
+::
+	
+	<page context="content/contact/success" template="common/page-contact.tpl"></page>
+
+Cách khác, bạn cũng có thể thiết lập sử dụng chung template với trang chính  (content/contact) bằng cách thêm thuộc tính ``child_pages="1"``:
+
+::
+	
+	<page context="content/contact" child_pages="1" template="common/page-contact.tpl"></page>
+
+Cách này sẽ áp dụng template page-contact.tpl cho mọi trang con từ địa chỉ 'content/contact'.
+
 **Lọc page bởi tham số**
 
 Bạn cũng có thể sử dụng nhiều templates cho 1 trang, bằng cách lọc tham số URL. Ở ví dụ trên, page ``content/content`` sẽ hiển thị nội dung trang có *id=1*, khai báo tham số ``content_id`` vào thuộc tính ``args``.
