@@ -46,6 +46,33 @@ Xem chi tiết _video hướng dẫn cách cài đặt: http://www.vinacart.net/
 
 Chú ý: nếu bạn muốn cài đặt lại vinacart, sử dụng URL sau: ``http://vinacart.dev/install/?rt=install&force=1``
 
+**Sử dụng tiền tố www**
+
+Nếu bạn muốn sử dụng tiền tố www, và chuyển hướng URL sang subdomain này sau khi cài đặt xong, truy cập vào trang quản trị sửa lại đường dẫn cửa hàng. Vd: http://www.example.com
+
+*Chú ý*: bạn cần xóa cache và tắt cache nếu URL hoạt động không chính xác. Nếu URL đã hoạt động bạn có thể bật cache trở lại.
+
+Lúc này admin vẫn hoạt động với URL cũ (không có www), tuy nhiên để storefront và admin tự động chuyển hướng sang www khi người dùng gõ tên miền của bạn không chứa www. Bạn thêm dòng sau vào file .htaccess
+
+::
+
+	..
+	RewriteRule ^(.*)\?*$ index.php?_route_=$1 [L,QSA]
+
+	# if want to redirect non-www to www
+	RewriteCond %{HTTP_HOST} !^www\. [NC]
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
+	..
+
+Nếu tạo nhiều cửa hàng với cùng một domain, (vd: store2.example.com) hãy liệt kê trong danh sách loại bỏ để www được chuyển hướng đúng.
+
+::
+
+	RewriteCond %{HTTP_HOST} !^www\. [NC]
+	RewriteCond %{HTTP_HOST} !^store2\. [NC]
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
+
+
 Sử dụng Openshift
 -----------------
 **Bước 1**: Đăng ký một tài khoản miễn phí với openshift online tại https://www.openshift.com/
@@ -85,3 +112,14 @@ Bắt đầu xuất bản ứng dụng bằng git.
 Chú ý: Build vinacart sẽ mất vài phút, hãy kiên nhân chờ đợi. Quá trình cài đặt server & vinacart ecommerce hoàn tất, địa chỉ app của bạn có dạng:
 
 ``vinacart-<your-domain>.rhcloud.com``
+
+Sử dụng Heroku
+--------------
+Cài đặt vinacart trên heroku hosting.
+
+**Cách 1**:
+::
+	// tải vinacart project cho heroku
+	git clone https://github.com/ktdocker90/heroku-vinacart
+	
+	heroku heroku buildpacks:set https://github.com/ktdocker90/heroku-buildpack-php-vinacart
