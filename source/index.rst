@@ -3,9 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-HƯỚNG DẪN THIẾT KẾ THEMES
-===========================
-Xem chi tiết source code tại `tailieu.vinacart.net <http://tailieu.vinacart.net>`_
+Hướng dẫn thiết kế theme Vinacart
+=================================
+Xem chi tiết source code: `tailieu.vinacart.net <http://tailieu.vinacart.net>`_
 
 Đây là tài liệu hướng dẫn thiết kế theme VinaCart Ecommerce cho người sử dụng và phát triển. Tài liệu này bao gồm nhiều khía cạnh liên quan với việc thiết lập cửa hàng của bạn, cũng như hướng dẫn phát triển giao diện người sử dụng.
 
@@ -17,7 +17,7 @@ Sau khi đọc hướng dẫn này, bạn có thể dễ dàng sử dụng nền
 .. troubleshooting
 .. form
 
-Nội dung:
+**Nội dung**:
 
 .. toctree::
    :maxdepth: 2
