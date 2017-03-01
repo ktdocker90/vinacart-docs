@@ -15,6 +15,7 @@ Sau khi đọc hướng dẫn này, bạn có thể dễ dàng sử dụng nền
 
 .. backup-data
 .. troubleshooting
+.. form
 
 Nội dung:
 
@@ -28,5 +29,3 @@ Nội dung:
    global-config
    intro-layout-blocks
    template
-
-.. form
