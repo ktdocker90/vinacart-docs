@@ -28,4 +28,5 @@ Nội dung:
    global-config
    intro-layout-blocks
    template
-   form
+
+.. form
