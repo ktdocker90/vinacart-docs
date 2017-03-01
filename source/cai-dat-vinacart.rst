@@ -2,6 +2,8 @@
 Hướng dẫn cài đặt Vinacart
 ==========================
 
+Tải mã nguồn Vinacart: http://www.vinacart.net/p/download.html
+
 Cấu hình Server
 ---------------
 **Apache**: Yêu cầu bật modules & extension dưới đây:
@@ -42,7 +44,7 @@ Trường hợp sử dụng Linux, để thiết lập chmod đầy đủ cho c�
 
 Mở trình duyệt, truy cập trang cài đặt: ``http://vinacart.dev/install/``
 Làm theo trình tự các bước (wizard). Điền thông tin đầy đủ rồi nhấn cài đặt, chờ trong vài phút để trình cài đặt hoàn tất.
-Xem chi tiết _video hướng dẫn cách cài đặt: http://www.vinacart.net/p/download.html
+
 
 Chú ý: nếu bạn muốn cài đặt lại vinacart, sử dụng URL sau: ``http://vinacart.dev/install/?rt=install&force=1``
 
