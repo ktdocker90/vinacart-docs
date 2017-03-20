@@ -3,25 +3,21 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-HƯỚNG DẪN THIẾT KẾ THEMES
-===========================
-Xem chi tiết source code tại `tailieu.vinacart.net <http://tailieu.vinacart.net>`_
+Hướng dẫn thiết kế theme Vinacart
+=================================
+Xem chi tiết source code: `tailieu.vinacart.net <http://tailieu.vinacart.net>`_
 
-Trang web này phục vụ như là một nguồn tài nguyên chính thức tài liệu VinaCart chính cho người sử dụng quản lý và phát triển với VinaCart.
-Web tài liệu bao gồm nhiều khía cạnh liên quan với việc thiết lập webstore của bạn, quản lý nó với ngày để hoạt động ngày, cũng như hướng dẫn sử dụng theo định hướng phát triển.
+Đây là tài liệu hướng dẫn thiết kế theme VinaCart Ecommerce cho người sử dụng và phát triển. Tài liệu này bao gồm nhiều khía cạnh liên quan với việc thiết lập cửa hàng của bạn, cũng như hướng dẫn phát triển giao diện người sử dụng.
 
-Tài liệu hướng dẫn cho bạn qua các phần của giao diện quản lý và cung cấp các giải pháp và gợi ý với hầu hết các khu chức năng của thương mại điện tử của bạn.
-Bạn sẽ có thể hiểu như thế nào VinaCart của bạn hoạt động và mỗi phần có trách nhiệm, làm thế nào bạn có thể sửa đổi và thiết lập các bên quản lý để đáp ứng nhu cầu kinh doanh của bạn.
-Ở đây bạn có thể tìm thấy thông tin chi tiết về việc bổ sung sản phẩm cho cửa hàng của bạn.
-Theo dõi bán hàng, quản lý khách hàng, tùy biến các văn bản, thay đổi thiết kế mặt tiền cửa hàng, thêm phần mở rộng, và nhiều hơn nữa.
+Tài liệu hướng dẫn cho bạn qua các phần của giao diện quản lý và cung cấp các giải pháp và gợi ý với hầu hết các khu chức năng của thương mại điện tử của bạn. Bạn sẽ có thể hiểu VinaCart hoạt động như thế nào, làm thế nào bạn có thể sửa đổi và thiết lập các blocks, giao diện cửa hàng để tùy chỉnh theo nhu cầu của bạn.
 
-Sau khi đọc hướng dẫn này, bạn sẽ rất thoải mái với việc sử dụng các VinaCart để thiết lập cửa hàng trực tuyến của bạn và duy trì nó theo thời gian.
-Nếu bạn là nhà phát triển, bạn sẽ sẵn sàng để mã với VinaCart và phát triển các phần mở rộng cho trang web của bạn hoặc khách hàng của bạn.
+Sau khi đọc hướng dẫn này, bạn có thể dễ dàng sử dụng nền tảng VinaCart để thiết lập cửa hàng trực tuyến và bán hàng theo cách của bạn. Dưới đây là mục lục để bạn có thể bắt đầu làm quen và sử dụng hiệu quả VinaCart.
 
 .. backup-data
 .. troubleshooting
+.. form
 
-Nội dung:
+**Nội dung**:
 
 .. toctree::
    :maxdepth: 2
@@ -33,4 +29,4 @@ Nội dung:
    global-config
    intro-layout-blocks
    template
-   form
+   FAQ

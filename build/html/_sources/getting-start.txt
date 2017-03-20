@@ -20,15 +20,17 @@ Chú ý sau khi copy theme mẫu, bạn cần đổi tên thư mục và file ch
 
 Sửa nội dung
 ============
-Tìm và đổi tên ``mytheme`` thành ``theme1``.
+Tìm và đổi tên ``mytheme`` thành ``theme1`` trong các file nếu có.
 
 File cấu hình theme
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Tìm và đổi tên ``mytheme`` thành ``theme1`` trong file config.xml và main.php
 
-File cài đặt
-^^^^^^^^^^^^
-Tương tự cho file uninstall.sql
+.. 	
+	comment
+	File cài đặt
+	^^^^^^^^^^^^
+	Tương tự cho file uninstall.sql
 
 Ngôn ngữ
 ^^^^^^^^

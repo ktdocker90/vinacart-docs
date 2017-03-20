@@ -35,7 +35,7 @@
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
         <link rel="next" title="Cấu trúc theme" href="vinacart-theme-structure.html"/>
-        <link rel="prev" title="HƯỚNG DẪN THIẾT KẾ THEMES" href="index.html"/> 
+        <link rel="prev" title="Hướng dẫn thiết kế theme Vinacart" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -87,8 +87,10 @@
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Hướng dẫn cài đặt Vinacart</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#cau-hinh-server">Cấu hình Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cai-dat">Cài đặt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#su-dung-openshift">Sử dụng Openshift</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cai-dat">Cài đặt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#cap-nhat">Cập nhật</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
@@ -97,7 +99,6 @@
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="form.html">Sử dụng Form</a></li>
 </ul>
 
             
@@ -144,6 +145,7 @@
             
   <div class="section" id="huong-dan-cai-dat-vinacart">
 <h1>Hướng dẫn cài đặt Vinacart<a class="headerlink" href="#huong-dan-cai-dat-vinacart" title="Permalink to this headline">¶</a></h1>
+<p>Tải mã nguồn Vinacart: <a class="reference external" href="http://www.vinacart.net/p/download.html">http://www.vinacart.net/p/download.html</a></p>
 <div class="section" id="cau-hinh-server">
 <h2>Cấu hình Server<a class="headerlink" href="#cau-hinh-server" title="Permalink to this headline">¶</a></h2>
 <p><strong>Apache</strong>: Yêu cầu bật modules &amp; extension dưới đây:</p>
@@ -151,6 +153,7 @@
 <li><em>Module</em>: mod_rewrite</li>
 <li><em>Extension</em>: ioncube_loader, php_intl, php_curl, php_fileinfo, php_gd2, php_mbstring, php_mysql|php_mysqli|php_pdo_mysql</li>
 </ul>
+<p>Chú ý: Không hỗ trợ LiteSpeed Web Server.</p>
 </div>
 <div class="section" id="cai-dat">
 <h2>Cài đặt<a class="headerlink" href="#cai-dat" title="Permalink to this headline">¶</a></h2>
@@ -182,37 +185,32 @@ Trường hợp sử dụng Linux, để thiết lập chmod đầy đủ cho c�
 <li>Tiến hành cài đặt.</li>
 </ol>
 <p>Mở trình duyệt, truy cập trang cài đặt: <code class="docutils literal"><span class="pre">http://vinacart.dev/install/</span></code>
-Làm theo trình tự các bước (wizard). Điền thông tin đầy đủ rồi nhấn cài đặt, chờ trong vài phút để trình cài đặt hoàn tất.
-Xem chi tiết _video hướng dẫn cách cài đặt: <a class="reference external" href="http://www.vinacart.net/p/download.html">http://www.vinacart.net/p/download.html</a></p>
+Làm theo trình tự các bước (wizard). Điền thông tin đầy đủ rồi nhấn cài đặt, chờ trong vài phút để trình cài đặt hoàn tất.</p>
 <p>Chú ý: nếu bạn muốn cài đặt lại vinacart, sử dụng URL sau: <code class="docutils literal"><span class="pre">http://vinacart.dev/install/?rt=install&amp;force=1</span></code></p>
-</div>
-<div class="section" id="su-dung-openshift">
-<h2>Sử dụng Openshift<a class="headerlink" href="#su-dung-openshift" title="Permalink to this headline">¶</a></h2>
-<p><strong>Bước 1</strong>: Đăng ký một tài khoản miễn phí với openshift online tại <a class="reference external" href="https://www.openshift.com/">https://www.openshift.com/</a></p>
-<p><strong>Bước 2</strong>: Đăng nhập vào admin và tạo một ứng dụng dạng diy &#8220;Do-It-Yourself 0.1&#8221; có tên &#8220;vinacart&#8221; chẳng hạn.</p>
-<img alt="_images/openshift-deployment.png" src="_images/openshift-deployment.png" />
-<p>Truy cập URL <a class="reference external" href="https://openshift.redhat.com/app/console/applications">https://openshift.redhat.com/app/console/applications</a> và chọn vào &#8220;Do-It-Yourself 0.1&#8221; như hình trên.</p>
-<p><strong>Bước 3</strong>:
-Sau khi tạo app hoàn tất, bạn sẽ nhìn thấy địa chỉ git của application này, sử dụng để tải app về local PC.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">ssh</span><span class="p">:</span><span class="o">//</span><span class="mi">5882202680</span><span class="n">f5cf6963000158</span><span class="nd">@vinacart</span><span class="o">-&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">domain</span><span class="o">&gt;.</span><span class="n">rhcloud</span><span class="o">.</span><span class="n">com</span><span class="o">/~/</span><span class="n">git</span><span class="o">/</span><span class="n">vinacart</span><span class="o">.</span><span class="n">git</span><span class="o">/</span>
-<span class="n">cd</span> <span class="n">vinacart</span><span class="o">/</span>
+<p><strong>Sử dụng tiền tố www</strong></p>
+<p>Nếu bạn muốn sử dụng tiền tố www, và chuyển hướng URL sang subdomain này sau khi cài đặt xong, truy cập vào trang quản trị sửa lại đường dẫn cửa hàng. Vd: <a class="reference external" href="http://www.example.com">http://www.example.com</a></p>
+<p><em>Chú ý</em>: bạn cần xóa cache và tắt cache nếu URL hoạt động không chính xác. Nếu URL đã hoạt động bạn có thể bật cache trở lại.</p>
+<p>Lúc này admin vẫn hoạt động với URL cũ (không có www), tuy nhiên để storefront và admin tự động chuyển hướng sang www khi người dùng gõ tên miền của bạn không chứa www. Bạn thêm dòng sau vào file .htaccess</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>..
+RewriteRule ^(.*)\?*$ index.php?_route_=$1 [L,QSA]
+
+# if want to redirect non-www to www
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
+..
 </pre></div>
 </div>
-<p>Tiếp đến, tải bộ cài đặt vinacart.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">ktdocker90</span><span class="o">/</span><span class="n">vinacart</span><span class="o">-</span><span class="n">openshift</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cp</span> <span class="o">-</span><span class="n">R</span> <span class="n">vinacart</span><span class="o">-</span><span class="n">openshift</span><span class="o">/.</span><span class="n">openshift</span> <span class="o">.</span>
-<span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="n">vinacart</span><span class="o">-</span><span class="n">openshift</span>
+<p>Nếu tạo nhiều cửa hàng với cùng một domain, (vd: store2.example.com) hãy liệt kê trong danh sách loại bỏ để www được chuyển hướng đúng.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^store2\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
 </pre></div>
 </div>
-<p>Chú ý: repo helper này chúng ta chỉ cần lấy phần cài đặt trên openshift (thư mục .openshift) do vậy toàn bộ file khác trong thư mục không cần dùng đến nữa.</p>
-<p>Bắt đầu xuất bản ứng dụng bằng git.</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">add</span> <span class="o">.</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="s1">&#39;My changes&#39;</span>
-<span class="n">git</span> <span class="n">push</span>
-</pre></div>
+<div class="section" id="cap-nhat">
+<h3>Cập nhật<a class="headerlink" href="#cap-nhat" title="Permalink to this headline">¶</a></h3>
+<p>Để cập nhật bản mới nhất, nếu không có thay đổi cấu trúc các bảng dữ liệu bạn chỉ cần tải file nén về vào giải nén ghi đè vào các file cũ là được.
+Trường hợp bản update có thông báo sửa đổi cấu trúc bảng, bạn có thể sửa lại database với file .sql vinacart cung cấp hoặc bạn cũng có thể cài lại vinacart cho web mới.</p>
 </div>
-<p>Chú ý: Build vinacart sẽ mất vài phút, hãy kiên nhân chờ đợi. Quá trình cài đặt server &amp; vinacart ecommerce hoàn tất, địa chỉ app của bạn có dạng:</p>
-<p><code class="docutils literal"><span class="pre">vinacart-&lt;your-domain&gt;.rhcloud.com</span></code></p>
 </div>
 </div>
 
@@ -226,7 +224,7 @@ Sau khi tạo app hoàn tất, bạn sẽ nhìn thấy địa chỉ git của ap
         <a href="vinacart-theme-structure.html" class="btn btn-neutral float-right" title="Cấu trúc theme" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="HƯỚNG DẪN THIẾT KẾ THEMES" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral" title="Hướng dẫn thiết kế theme Vinacart" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

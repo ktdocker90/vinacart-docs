@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Search &mdash; Vinacart Docs 1.0 documentation</title>
+  <title>Sử dụng SSL HTTPS &mdash; Vinacart Docs 1.0 documentation</title>
   
 
   
@@ -32,7 +32,7 @@
   
         <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Search" href="#"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/> 
 
   
@@ -68,7 +68,7 @@
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -112,7 +112,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -120,8 +120,12 @@
   <ul class="wy-breadcrumbs">
     <li><a href="index.html">Docs</a> &raquo;</li>
       
-    <li></li>
+    <li>Sử dụng SSL HTTPS</li>
       <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/faq.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
@@ -130,19 +134,14 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search
-      functionality.
-    </p>
-  </div>
-  </noscript>
+  <div class="section" id="su-dung-ssl-https">
+<h1>Sử dụng SSL HTTPS<a class="headerlink" href="#su-dung-ssl-https" title="Permalink to this headline">¶</a></h1>
+<p>Để sử dụng SSL https, bạn điền URL vào giá trị trường &#8220;Secure Store URL&#8221; ở trang thiết lập cài đặt cửa hảng &#8220;setting/setting/details&#8221;. Chú ý: 2 tên miền &#8220;Store URL&#8221; và &#8220;Secure Store URL&#8221; phải cùng một domain.
+Ví dụ: <a class="reference external" href="http://shop.vn">http://shop.vn</a> &amp; <a class="reference external" href="https://www.shop.vn">https://www.shop.vn</a> là 2 tên miền khác nhau, phân biệt cả subdomain (www).</p>
+<p><strong>Chuyển hướng SSL</strong></p>
+<p>Sử dụng .htaccess. Bạn muốn chuyển hướng non-https sang https, thêm dòng sau vào file .htaccess.</p>
+</div>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
@@ -184,7 +183,6 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="_static/searchtools.js"></script>
 
   
 
@@ -200,14 +198,7 @@
           SphinxRtdTheme.StickyNav.enable();
       });
   </script>
-  
-  <script type="text/javascript">
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script type="text/javascript" id="searchindexloader"></script>
    
-
 
 </body>
 </html>

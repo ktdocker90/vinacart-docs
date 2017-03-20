@@ -12,14 +12,14 @@ cấu trúc 1 extension gồm có:
     -  language/ - files .xml chứa ngôn ngữ dịch.
 -  core/ - chứa hooks.
 -  storefront/ - cấu trúc MVC sử lý ở frontend (website)
-    -  Cấu trúc tương tự ``admin/``
+    - Cấu trúc tương tự ``admin/``
     - language/ - chứa ngôn ngữ dịch.
         - english/
         - vietnamese/
     - view
         - ``<theme_name>``/ - chú ý cần trùng với tên thư mục theme. Bạn sẽ làm việc với thư mục này để thiết kế template.
 
-- data/ - chứa dữ liệu mẫu của theme trong quá trình cài đặt.
+- data/ - chứa dữ liệu mẫu của theme (sử dụng trong quá trình cài đặt).
     - blocks.xml - lưu toàn bộ khai báo blocks.
     - layout.xml - lưu layout & pages.
     - datasets.xml - lưu cấu hình blocks.
@@ -33,12 +33,12 @@ cấu trúc 1 extension gồm có:
 -  install.sql - import sql data khi cài đặt theme.
 -  uninstall.php - code sử lý khi hủy cài đặt theme.
 -  uninstall.sql - chạy lệnh sql khi hủy cài đặt theme.
--  main.php - Khai báo các files php, .tpl
+-  main.php - Khai báo các files php, .tpl có sử dụng
 -  icon.png - ảnh đại diện của theme.
 -  theme.xml - thông tin cơ bản về theme.
 
 
-Xem qua extension ``mytheme`` (extensions/mytheme) để tham khảo cách viết một theme mẫu.
+Xem extension ``mytheme`` (extensions/mytheme) để tham khảo cách viết một theme mẫu.
 
 config.xml
 ^^^^^^^^^^
@@ -124,7 +124,7 @@ Tại đây bạn khai báo toàn bộ các files *.php, *.tpl thuộc controlle
       //quy định template thì không viết cho admin
    ) );
 
-Chú ý: tạo thêm file (php, tpl) nào phải khai báo đầy đủ vào đây.
+Chú ý: tạo thêm file (php, tpl) khác phải khai báo đầy đủ vào đây.
 
 theme.xml
 ^^^^^^^^^

@@ -86,7 +86,7 @@ Khai báo các thông tin cấu hình ở thẻ ``<configuration`` như version,
 - sample_data: tên dữ liệu mẫu bạn đang viết theme này. Danh sách dữ liệu mẫu gồm có: thoitrang, dulich,...(Bạn có thể bổ xung tùy ý, lưu ý không viết cách & chứa ký tự UTF-8).
 - name: tên thư mục theme.
 
-Xem tiếp phần dưới sẽ giải thích chi tiết cách dùng cấu hình.
+Xem tiếp phần dưới có giải thích chi tiết cách dùng cấu hình.
 
 Settings
 ========

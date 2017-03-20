@@ -20,22 +20,24 @@ Chú ý sau khi copy theme mẫu, bạn cần đổi tên thư mục và file ch
 
 Sửa nội dung
 ============
-Tìm và đổi tên ``mytheme`` thành ``theme1``.
+Tìm và đổi tên ``mytheme`` thành ``theme1`` trong các file nếu có.
 
 File cấu hình theme
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Tìm và đổi tên ``mytheme`` thành ``theme1`` trong file config.xml và main.php
 
-File cài đặt
-^^^^^^^^^^^^
-Tương tự cho file uninstall.sql
+.. 	
+	comment
+	File cài đặt
+	^^^^^^^^^^^^
+	Tương tự cho file uninstall.sql
 
 Ngôn ngữ
 ^^^^^^^^
 - admin/language/english/theme1/theme1.xml
 - admin/language/vietnamese/theme1/theme1.xml
 
-Sử dụng file ngôn ngữ cho cả admin & frontend. Admin dành cho trang cấu hình extension. Tiến hành sửa 2 file trên:
+Sử dụng file ngôn ngữ cho cả admin & frontend. Admin dành cho trang cấu hình extension của Theme. Tiến hành sửa 2 file trên:
 ::
 
 	<?xml version="1.0" encoding="UTF-8"?>
@@ -48,7 +50,7 @@ Sử dụng file ngôn ngữ cho cả admin & frontend. Admin dành cho trang c�
 
 core/ThemeExtension.php
 ^^^^^^^^^^^^^^^^^^^^^^^
-Đây là file gọi đầu tiên khi nạp theme. Trong file khai báo class có tên ``Extension<theme_name>``. 
+Đây là file gọi đầu tiên khi theme được kích hoạt sử dụng. Trong file khai báo class có tên ``Extension<theme_name>``. 
 vd: mytheme -> ExtensionMytheme, theme1 -> ExtensionTheme1
 
 Sửa tên class phù hợp với tên theme của bạn.

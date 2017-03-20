@@ -97,9 +97,6 @@
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="form.html">Sử dụng Form</a></li>
-<li class="toctree-l1"><a class="reference internal" href="backup-data.html">Backup dữ liệu</a></li>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Sửa lỗi</a></li>
 </ul>
 
             
@@ -189,7 +186,7 @@ cấu trúc 1 extension gồm có:</p>
 </dl>
 </li>
 <li><dl class="first docutils">
-<dt>data/ - chứa dữ liệu mẫu của theme trong quá trình cài đặt.</dt>
+<dt>data/ - chứa dữ liệu mẫu của theme (sử dụng trong quá trình cài đặt).</dt>
 <dd><ul class="first last simple">
 <li>blocks.xml - lưu toàn bộ khai báo blocks.</li>
 <li>layout.xml - lưu layout &amp; pages.</li>
@@ -217,14 +214,14 @@ cấu trúc 1 extension gồm có:</p>
 </li>
 <li><p class="first">uninstall.sql - chạy lệnh sql khi hủy cài đặt theme.</p>
 </li>
-<li><p class="first">main.php - Khai báo các files php, .tpl</p>
+<li><p class="first">main.php - Khai báo các files php, .tpl có sử dụng</p>
 </li>
 <li><p class="first">icon.png - ảnh đại diện của theme.</p>
 </li>
 <li><p class="first">theme.xml - thông tin cơ bản về theme.</p>
 </li>
 </ul>
-<p>Xem qua extension <code class="docutils literal"><span class="pre">mytheme</span></code> (extensions/mytheme) để tham khảo cách viết một theme mẫu.</p>
+<p>Xem extension <code class="docutils literal"><span class="pre">mytheme</span></code> (extensions/mytheme) để tham khảo cách viết một theme mẫu.</p>
 <div class="section" id="config-xml">
 <h2>config.xml<a class="headerlink" href="#config-xml" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
@@ -304,7 +301,7 @@ cấu trúc 1 extension gồm có:</p>
 <span class="p">)</span> <span class="p">);</span>
 </pre></div>
 </div>
-<p>Chú ý: tạo thêm file (php, tpl) nào phải khai báo đầy đủ vào đây.</p>
+<p>Chú ý: tạo thêm file (php, tpl) khác phải khai báo đầy đủ vào đây.</p>
 </div>
 <div class="section" id="theme-xml">
 <h2>theme.xml<a class="headerlink" href="#theme-xml" title="Permalink to this headline">¶</a></h2>

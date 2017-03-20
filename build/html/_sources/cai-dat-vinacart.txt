@@ -2,12 +2,15 @@
 Hướng dẫn cài đặt Vinacart
 ==========================
 
+Tải mã nguồn Vinacart: http://www.vinacart.net/p/download.html
+
 Cấu hình Server
 ---------------
 **Apache**: Yêu cầu bật modules & extension dưới đây:
 
 - *Module*: mod_rewrite
 - *Extension*: ioncube_loader, php_intl, php_curl, php_fileinfo, php_gd2, php_mbstring, php_mysql|php_mysqli|php_pdo_mysql
+Chú ý: Không hỗ trợ LiteSpeed Web Server.
 
 Cài đặt
 -------
@@ -42,46 +45,37 @@ Trường hợp sử dụng Linux, để thiết lập chmod đầy đủ cho c�
 
 Mở trình duyệt, truy cập trang cài đặt: ``http://vinacart.dev/install/``
 Làm theo trình tự các bước (wizard). Điền thông tin đầy đủ rồi nhấn cài đặt, chờ trong vài phút để trình cài đặt hoàn tất.
-Xem chi tiết _video hướng dẫn cách cài đặt: http://www.vinacart.net/p/download.html
+
 
 Chú ý: nếu bạn muốn cài đặt lại vinacart, sử dụng URL sau: ``http://vinacart.dev/install/?rt=install&force=1``
 
-Sử dụng Openshift
------------------
-**Bước 1**: Đăng ký một tài khoản miễn phí với openshift online tại https://www.openshift.com/
+**Sử dụng tiền tố www**
 
-**Bước 2**: Đăng nhập vào admin và tạo một ứng dụng dạng diy "Do-It-Yourself 0.1" có tên "vinacart" chẳng hạn.
+Nếu bạn muốn sử dụng tiền tố www, và chuyển hướng URL sang subdomain này sau khi cài đặt xong, truy cập vào trang quản trị sửa lại đường dẫn cửa hàng. Vd: http://www.example.com
 
-.. image:: images/openshift-deployment.png
+*Chú ý*: bạn cần xóa cache và tắt cache nếu URL hoạt động không chính xác. Nếu URL đã hoạt động bạn có thể bật cache trở lại.
 
-Truy cập URL https://openshift.redhat.com/app/console/applications và chọn vào "Do-It-Yourself 0.1" như hình trên.
-
-**Bước 3**:
-Sau khi tạo app hoàn tất, bạn sẽ nhìn thấy địa chỉ git của application này, sử dụng để tải app về local PC.
+Lúc này admin vẫn hoạt động với URL cũ (không có www), tuy nhiên để storefront và admin tự động chuyển hướng sang www khi người dùng gõ tên miền của bạn không chứa www. Bạn thêm dòng sau vào file .htaccess
 
 ::
 
-	git clone ssh://5882202680f5cf6963000158@vinacart-<your-domain>.rhcloud.com/~/git/vinacart.git/
-	cd vinacart/
+	..
+	RewriteRule ^(.*)\?*$ index.php?_route_=$1 [L,QSA]
 
-Tiếp đến, tải bộ cài đặt vinacart.
+	# if want to redirect non-www to www
+	RewriteCond %{HTTP_HOST} !^www\. [NC]
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
+	..
 
-::
-	
-	git clone https://github.com/ktdocker90/vinacart-openshift.git
-	cp -R vinacart-openshift/.openshift .
-	rm -rf vinacart-openshift
-
-Chú ý: repo helper này chúng ta chỉ cần lấy phần cài đặt trên openshift (thư mục .openshift) do vậy toàn bộ file khác trong thư mục không cần dùng đến nữa.
-
-Bắt đầu xuất bản ứng dụng bằng git.
+Nếu tạo nhiều cửa hàng với cùng một domain, (vd: store2.example.com) hãy liệt kê trong danh sách loại bỏ để www được chuyển hướng đúng.
 
 ::
 
-	git add .
-	git commit -m 'My changes'
-	git push
+	RewriteCond %{HTTP_HOST} !^www\. [NC]
+	RewriteCond %{HTTP_HOST} !^store2\. [NC]
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
 
-Chú ý: Build vinacart sẽ mất vài phút, hãy kiên nhân chờ đợi. Quá trình cài đặt server & vinacart ecommerce hoàn tất, địa chỉ app của bạn có dạng:
-
-``vinacart-<your-domain>.rhcloud.com``
+Cập nhật
+========
+Để cập nhật bản mới nhất, nếu không có thay đổi cấu trúc các bảng dữ liệu bạn chỉ cần tải file nén về vào giải nén ghi đè vào các file cũ là được. 
+Trường hợp bản update có thông báo sửa đổi cấu trúc bảng, bạn có thể sửa lại database với file .sql vinacart cung cấp hoặc bạn cũng có thể cài lại vinacart cho web mới.
