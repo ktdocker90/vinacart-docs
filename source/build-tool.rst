@@ -9,7 +9,7 @@ Khái niệm/Thuật ngữ
 Các blocks & pages được thiết kế vào các file HTML riêng biệt, chúng có cấu trúc khác nhau tùy vào giao diện gốc. Trong đó một số block/page có sử dụng chung cấu trúc HTML như tabs, ul list,..sẽ được kế thừa và tự động tạo không cần thiết kế lại HTML cho chúng.
 
 - block/page gọi chung là block.
-
+- module: là những thành phần HTML dùng chung cho block.
 
 Build Form
 ==========
@@ -24,8 +24,9 @@ Nhấn Build để bắt đầu.
 
 theme.xml
 =========
-File cấu hình cho theme. File này có khai báo asset (.css, .js), giao diện block & các cấu hình khác như ảnh, cũng sẽ được cập nhật tự động bằng cách nhấn vào nút ``Update theme.xml``
+Đây là File cấu hình cho theme. File này có khai báo asset (.css, .js), giao diện block & các cấu hình khác như ảnh, cũng sẽ được cập nhật tự động bằng cách nhấn vào nút ``Update theme.xml``
 
+Một khi file này được tạo, những module có sử dụng cho việc tạo ``theme.xml`` sẽ được đánh đấu là đã build trong menu Themes List có nói ở bên dưới.
 
 Global/Menu
 ===========
@@ -75,7 +76,7 @@ Inspect HTML
 Phần này liệt kê những file html được tạo. Để thêm file có 2 cách :
 
 - Sử dụng công cụ inspect để khoanh vùng block và các thành phần chi tiết của block. Sau khi đã đánh dấu đầy đủ, chuột phải tại vùng block có mầu đỏ chọn edit & nhấn Export Block. File HTML của block đó sẽ được lưu lại vào thư mục ``html_saved/<theme>``. 
-	Tại đó Bạn cũng xem trước nội dung tpl đã sinh ra để kiểm tra bạn đã đánh dấu đúng thành phần của block hay không.
+Tại đó Bạn cũng xem trước nội dung tpl đã sinh ra để kiểm tra bạn đã đánh dấu đúng thành phần của block hay không.
 
 - Soạn trực tiếp nội dung HTML của block: cách này nhanh gọn & chính xác hơn. Để thêm file nhấn nút ``+`` bên cạnh panel, hộp thoại xuất hiện chọn file và nhấn nút Ok.
 Bạn sẽ thây nội dung mẫu của block trong cửa sổ soạn thảo. Những thành phần của block được highlight mẫu xanh, cho biết vị trí của chúng đặt trong thuộc tính class trong nội dung HTML.
