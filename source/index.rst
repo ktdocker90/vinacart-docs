@@ -29,4 +29,5 @@ Sau khi đọc hướng dẫn này, bạn có thể dễ dàng sử dụng nền
    global-config
    intro-layout-blocks
    template
+   build-tool
    FAQ
