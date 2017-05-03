@@ -18,6 +18,8 @@ Cấu hình Server
 	- mcrypt : mcrypt library
 	- pcntl : Process Control support signal handling and process termination
 	- openssl : encrypting & decrypting data
+
+..
 	- ioncube : cài extension này bản mới nhất từ trang https://www.ioncube.com/loaders.php
 
 Chú ý: Không hỗ trợ LiteSpeed Web Server.

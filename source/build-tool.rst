@@ -19,8 +19,11 @@ Build Form
 
 Bạn có thể build từng block/page/.. hoặc build toàn bộ theme với nút **Build**. Để build từng thành phần một, nhấn vào lựa chọn "Build Option",một hộp thoại hiện ra cho phép bạn chọn những block/page muốn build, ví dụ trường hợp bạn đã sửa lại một số thứ và chỉ muốn build chúng.
 
+Để build toàn bộ lại từ đầu, chọn vào Build All.
+
 Nhấn Build để bắt đầu.
 
+Để xóa toàn bộ dữ liệu theme nhấn vào nút Xóa.
 
 theme.xml
 =========
@@ -31,7 +34,7 @@ Một khi file này được tạo, những module có sử dụng cho việc t�
 Global/Menu
 ===========
 
-CSS class/id List
+CSS class/id
 ^^^^^^^^^^^^^^^^^
 Nội dung Shortcode được điền vào HTML để thay thế class khi build ra file .tpl. Trang này liệt kê danh sách những class có thể sử dụng. Bạn điền đầy đủ vào các trường tùy theo thiết kế giao diện HTML.
 
@@ -45,7 +48,7 @@ Các thành phần HTML dùng chung trong block/page, như nút , message, tabs,
 Nhập đoạn HTML vào trình soạn thảo, và nhấn nút Lưu.
 
 
-Blocks use module
+Blocks module
 ^^^^^^^^^^^^^^^^^
 Phần này thiết lập giao diện module cho block, cho những block có sử dụng module (tức là block đó không có giao diện HTML riêng mà dùng chung thành phần HTML, gọi là module). 
 
@@ -57,6 +60,18 @@ module tabs có các giao diện: tabs.html (giao diện chính), tabs-1.html, t
 
 Lưu ý: mỗi block kế thừa 1 module.
 
+Blocks setting
+^^^^^^^^^^^^^^
+Phần này cho phép bạn cài đặt thêm cho block, hỗ trợ trong quá trình build ra .tpl. VD với những block có chỉnh sửa chi tiết như menu, nếu bạn muốn sửa thành phần HTML như thẻ dropdown, class..
+
+Mỗi cài đặt được thiết lập với theme hiện tại & sẽ backup cấu hình này trong thư mục html_saved/<theme>
+
+Blocks Advanced
+^^^^^^^^^^^^^^^
+Đây là phần cài đặt, tùy biến nâng cao cho blocks.
+
+- **Tính năng 1: Áp dụng HTML**:
+- mỗi block có thể build ra nhiều tpl với đầu vào các html khác nhau. Để thực hiện bạn thêm block muốn tạo thêm tpl, chọn file HTML và tên file tpl xuất ra. Sau đó lưu lại. Tại mục Form, chọn Build Option và nhấn nút Build > chọn block muốn build > Ok.
 
 Themes List
 ^^^^^^^^^^^
@@ -75,10 +90,13 @@ Inspect HTML
 ============
 Phần này liệt kê những file html được tạo. Để thêm file có 2 cách :
 
-- Sử dụng công cụ inspect để khoanh vùng block và các thành phần chi tiết của block. Sau khi đã đánh dấu đầy đủ, chuột phải tại vùng block có mầu đỏ chọn edit & nhấn Export Block. File HTML của block đó sẽ được lưu lại vào thư mục ``html_saved/<theme>``. 
+- Sử dụng công cụ inspect (beta) để khoanh vùng block và các thành phần chi tiết của block. Sau khi đã đánh dấu đầy đủ, chuột phải tại vùng block có mầu đỏ chọn edit & nhấn Export Block. File HTML của block đó sẽ được lưu lại vào thư mục ``html_saved/<theme>``. 
 Tại đó Bạn cũng xem trước nội dung tpl đã sinh ra để kiểm tra bạn đã đánh dấu đúng thành phần của block hay không.
 
 - Soạn trực tiếp nội dung HTML của block: cách này nhanh gọn & chính xác hơn. Để thêm file nhấn nút ``+`` bên cạnh panel, hộp thoại xuất hiện chọn file và nhấn nút Ok.
+
+Chú ý: bạn có thể thêm 1 hoặc nhiều file cùng lúc, chuột phải tại tab đã mở, có 4 lựa chọn: close, close All, Save & Save all.
+
 Bạn sẽ thây nội dung mẫu của block trong cửa sổ soạn thảo. Những thành phần của block được highlight mẫu xanh, cho biết vị trí của chúng đặt trong thuộc tính class trong nội dung HTML.
 
 Tên class có tiền tố ``__vnc-`` sau đó là tên thành phần. Trong đó có tên class chính bao toàn bộ nội dung block, có dạng: ``__vnc-block-<block_name>``
@@ -100,3 +118,4 @@ Tùy chọn Export zip với các file html đã trích xuất, các file .tpl �
 Upload HTML
 ===========
 Tại trang này cho phép bạn tải lên file zip chứa file .html của giao diện HTML gốc hoặc các file html được trích xuất nếu bạn có.
+Chú ý: zip chứa trực tiếp các file không nằm trong thư mục mẹ (root).
