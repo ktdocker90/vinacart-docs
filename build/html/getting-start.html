@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Getting start &mdash; Vinacart Docs 1.0 documentation</title>
+  <title>Getting start &mdash; Tài liệu Vinacart Docs 1.0</title>
   
 
   
@@ -32,8 +32,8 @@
   
         <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="search" title="Tìm Kiếm" href="search.html"/>
+    <link rel="top" title="Tài liệu Vinacart Docs 1.0" href="index.html"/>
         <link rel="next" title="Cấu hình theme" href="theme-config.html"/>
         <link rel="prev" title="Cấu trúc theme" href="vinacart-theme-structure.html"/> 
 
@@ -101,6 +101,7 @@
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Công cụ build theme tự động</a></li>
 </ul>
 
             
@@ -174,7 +175,7 @@
 <li>admin/language/english/theme1/theme1.xml</li>
 <li>admin/language/vietnamese/theme1/theme1.xml</li>
 </ul>
-<p>Sử dụng file ngôn ngữ cho cả admin &amp; frontend. Admin dành cho trang cấu hình extension. Tiến hành sửa 2 file trên:</p>
+<p>Sử dụng file ngôn ngữ cho cả admin &amp; frontend. Admin dành cho trang cấu hình extension của Theme. Tiến hành sửa 2 file trên:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;definitions&gt;
     &lt;definition&gt;
@@ -187,7 +188,7 @@
 </div>
 <div class="section" id="core-themeextension-php">
 <h3>core/ThemeExtension.php<a class="headerlink" href="#core-themeextension-php" title="Permalink to this headline">¶</a></h3>
-<p>Đây là file gọi đầu tiên khi nạp theme. Trong file khai báo class có tên <code class="docutils literal"><span class="pre">Extension&lt;theme_name&gt;</span></code>.
+<p>Đây là file gọi đầu tiên khi theme được kích hoạt sử dụng. Trong file khai báo class có tên <code class="docutils literal"><span class="pre">Extension&lt;theme_name&gt;</span></code>.
 vd: mytheme -&gt; ExtensionMytheme, theme1 -&gt; ExtensionTheme1</p>
 <p>Sửa tên class phù hợp với tên theme của bạn.</p>
 <p>Ok bước này đã hoàn tất, tiếp theo chúng ta sẽ tập trung viết template cho theme này.</p>
@@ -214,7 +215,7 @@ vd: mytheme -&gt; ExtensionMytheme, theme1 -&gt; ExtensionTheme1</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, VinaCart.
+        &copy; Bản quyền thuộc 2016, VinaCart.
 
     </p>
   </div>
@@ -245,6 +246,7 @@ vd: mytheme -&gt; ExtensionMytheme, theme1 -&gt; ExtensionTheme1</p>
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
 
   
 

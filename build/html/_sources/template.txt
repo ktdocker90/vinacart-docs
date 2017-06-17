@@ -18,11 +18,22 @@ Biến toàn cục: ``$vnc`` truy cập ở mọi template (.tpl).
 	        <h3>{{ vnc.getVar('category').name }}</h3>
 	        <p>{{ vnc.getVar('category').description }}</p>
 	      
+	      {% elseif vnc.getVar('blog_category') %}
+          <h1>{{ vnc.getVar('blog_category').name }}</h1>
+          <p>{{ vnc.getVar('blog_category').description }}</p>
+        
+        {% elseif vnc.getVar('blog_entry') %}
+          <h1>{{ vnc.getVar('blog_entry').entry_title }}</h1>
+
+        {# elseif vnc.getVar('blog_author') %}  
+          <h1>{{ vnc.getVar('blog_author') }}</h1>
+          #}
+
 	      {% elseif vnc.getVar('heading_title') %} 
 	      	<h3>{{vnc.getVar('heading_title') }}</h3>
 	      
 	      {% else %}
-	      	<h3>{{vnc.getVar('heading_title') }}</h3>
+	      	<h3>Empty</h3>
 	      {% endif %}
 	{% endif %}
 
@@ -46,6 +57,22 @@ Lấy nội dung bất kỳ block nào trong page.tpl (ngoại trừ parent bloc
 
 	//for block
 	blockVar('blocks/bestseller', 'products')
+
+**Template tag**
+
+common template tag:
+
+::
+	
+	{% if is_admin() %}
+	is_home()
+	is_category()
+	is_single_product()
+	is_manufacturer()
+	is_generic_pages()
+	is_search()
+	is_ajax()
+	is_page('content/contact')
 
 **Model**
 
@@ -80,6 +107,7 @@ Ngoài các blocks có sẵn trong layout, chúng tôi cho phép nạp một s�
 
 	//buitin function help you print value of any variable
 	{{ _print(..) }}
+	{{ _debug_backtrace(debug_backtrace()) }}
 
 **URL**:
 
@@ -119,3 +147,25 @@ Ngoài các blocks có sẵn trong layout, chúng tôi cho phép nạp một s�
 
 	Sau khi publish theme thành công hay một khi theme đã được xuất bản, bạn có thể gỡ bỏ ra khỏi store. Để thực hiện truy cập trang app, ở tab **Settings** mục **Publish Theme** nhấn vào **Delete from store** từ dropdown.
 
+**User**
+
+::
+
+	//current user
+	{{ current_user() }}
+
+**Utils functions**
+
+String:
+
+::
+
+	//replace string at first found
+	str_replace_first($find, $replace, $object)
+
+Config:
+
+::
+
+	config.get('store_main_email')
+	{{ config.get('livechat_embed') }}

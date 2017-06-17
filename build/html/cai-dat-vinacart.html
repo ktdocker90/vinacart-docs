@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Hướng dẫn cài đặt Vinacart &mdash; Vinacart Docs 1.0 documentation</title>
+  <title>Hướng dẫn cài đặt Vinacart &mdash; Tài liệu Vinacart Docs 1.0</title>
   
 
   
@@ -32,8 +32,8 @@
   
         <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="search" title="Tìm Kiếm" href="search.html"/>
+    <link rel="top" title="Tài liệu Vinacart Docs 1.0" href="index.html"/>
         <link rel="next" title="Cấu trúc theme" href="vinacart-theme-structure.html"/>
         <link rel="prev" title="Hướng dẫn thiết kế theme Vinacart" href="index.html"/> 
 
@@ -87,10 +87,7 @@
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Hướng dẫn cài đặt Vinacart</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#cau-hinh-server">Cấu hình Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cai-dat">Cài đặt</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#cap-nhat">Cập nhật</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#cai-dat">Cài đặt</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
@@ -145,13 +142,29 @@
             
   <div class="section" id="huong-dan-cai-dat-vinacart">
 <h1>Hướng dẫn cài đặt Vinacart<a class="headerlink" href="#huong-dan-cai-dat-vinacart" title="Permalink to this headline">¶</a></h1>
-<p>Tải mã nguồn Vinacart: <a class="reference external" href="http://www.vinacart.net/p/download.html">http://www.vinacart.net/p/download.html</a></p>
+<p>Home: <a class="reference external" href="http://www.vinacart.net/p/download.html">http://www.vinacart.net/p/download.html</a></p>
 <div class="section" id="cau-hinh-server">
 <h2>Cấu hình Server<a class="headerlink" href="#cau-hinh-server" title="Permalink to this headline">¶</a></h2>
 <p><strong>Apache</strong>: Yêu cầu bật modules &amp; extension dưới đây:</p>
-<ul class="simple">
-<li><em>Module</em>: mod_rewrite</li>
-<li><em>Extension</em>: ioncube_loader, php_intl, php_curl, php_fileinfo, php_gd2, php_mbstring, php_mysql|php_mysqli|php_pdo_mysql</li>
+<p>PHP version 5.6+</p>
+<ul>
+<li><p class="first"><em>Module</em>: mod_rewrite</p>
+</li>
+<li><dl class="first docutils">
+<dt><em>Extension</em>:</dt>
+<dd><ul class="first last simple">
+<li>mysql|mysqli|pdo_mysql : Original MySQL API</li>
+<li>gd : a graphics library used to manipulate images</li>
+<li>curl : client for URL handling used by GPM</li>
+<li>zlib : read and write gzip (.gz) compressed files</li>
+<li>mbstring : multibyte encoding</li>
+<li>mcrypt : mcrypt library</li>
+<li>pcntl : Process Control support signal handling and process termination</li>
+<li>openssl : encrypting &amp; decrypting data</li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 <p>Chú ý: Không hỗ trợ LiteSpeed Web Server.</p>
 </div>
@@ -160,7 +173,7 @@
 <ol class="arabic simple">
 <li>Chuẩn bị Domain.</li>
 </ol>
-<p>Nếu cài đặt trên localhost, sử dụng xampp, wamp.. bạn cần tạo alias (vd: <code class="docutils literal"><span class="pre">vinacart.dev</span></code>) thay vì sử dụng tên <code class="docutils literal"><span class="pre">localhost</span></code>. Ví dụ:
+<p>Cài đặt trên localhost, sử dụng xampp, wamp.. bạn tạo alias (vd: <code class="docutils literal"><span class="pre">vinacart.dev</span></code>) thay vì sử dụng tên <code class="docutils literal"><span class="pre">localhost</span></code>. Tuy nhiên điều này không bắt buộc. Ví dụ:
 Edit file <cite>c:/xampp/conf/extra/httpd-vhosts.conf</cite></p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">VirtualHost</span> <span class="o">*</span><span class="p">:</span><span class="mi">80</span><span class="o">&gt;</span>
     <span class="n">ServerName</span> <span class="n">vinacart</span><span class="o">.</span><span class="n">dev</span>
@@ -206,11 +219,6 @@ RewriteCond %{HTTP_HOST} !^store2\. [NC]
 RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
 </pre></div>
 </div>
-<div class="section" id="cap-nhat">
-<h3>Cập nhật<a class="headerlink" href="#cap-nhat" title="Permalink to this headline">¶</a></h3>
-<p>Để cập nhật bản mới nhất, nếu không có thay đổi cấu trúc các bảng dữ liệu bạn chỉ cần tải file nén về vào giải nén ghi đè vào các file cũ là được.
-Trường hợp bản update có thông báo sửa đổi cấu trúc bảng, bạn có thể sửa lại database với file .sql vinacart cung cấp hoặc bạn cũng có thể cài lại vinacart cho web mới.</p>
-</div>
 </div>
 </div>
 
@@ -233,7 +241,7 @@ Trường hợp bản update có thông báo sửa đổi cấu trúc bảng, b�
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, VinaCart.
+        &copy; Bản quyền thuộc 2016, VinaCart.
 
     </p>
   </div>
@@ -264,6 +272,7 @@ Trường hợp bản update có thông báo sửa đổi cấu trúc bảng, b�
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
 
   
 

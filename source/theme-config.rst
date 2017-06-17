@@ -505,6 +505,7 @@ Lưu ý: với mỗi kích thước tạo ra sẽ tạo thêm ảnh mới tươn
 Bạn cũng có thể thay đổi giá trị cài đặt ở từng vị trí parent, bằng cách khai báo giá trị trong thẻ ``<skin>``.
 
 ::
+
 	<skin>
         <_AI_>
             <name><![CDATA[sb_flat]]></name>
@@ -644,3 +645,57 @@ Khi đặt block ở 2 vị trí khác nhau mà chúng đều hiển thị vào 
 	</skin>
 
 Chú ý: ``<_AI_>`` alias của ``<__AUTO_INCREASE__>``
+
+Image Configuration
+===================
+
+- config_image_thumb_width|	config_image_thumb_height
+
+	+ thumb image for product page.
+
+- config_image_popup_width|	config_image_popup_height
+	
+	+ (listing_block) main image with media resource type for current object in page.
+	+ main image for product page.
+
+- config_image_product_width|config_image_product_height
+	
+	+ thumb image used in block: bestseller, featured, latest, special, listing_block (for product).
+	+ thumb for products listing in category|manufacturer|search|special page
+
+- config_image_additional_width|config_image_additional_height
+	
+	+ thumb image in block cart
+	+ additional thumb images in product page.
+
+- config_image_related_width|config_image_related_height
+	
+	+ main image for related products in product page.
+
+- config_image_cart_width|config_image_cart_height
+	
+	+ list product in account page: cart, download, invoice, wishlist, confirm, guest_step_3
+
+- config_image_grid_width|config_image_grid_height
+	
+	+ block manufacturer
+	+ image in manufacturer page.
+	+ list manufacturer images in product page.
+	+ (admin) in all grid list with image support.
+
+- config_image_category_width|config_image_category_height
+
+	+ block category, listing_block (for category)
+	+ list subcategories in category page.
+
+- config_image_manufacturer_width|config_image_manufacturer_height
+
+	+ listing_block (for manufacturer)
+
+*Conclusion*: 
+
+blocks: cart, category, bestseller (featured, latest, special), listing_block, manufacturer
+pages: 
+	single product
+	products listing page (category|manufacturer|special|search..)
+	account pages (cart, download, invoice, wishlist, confirm, guest_step_3)

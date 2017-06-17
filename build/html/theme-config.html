@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Cấu hình theme &mdash; Vinacart Docs 1.0 documentation</title>
+  <title>Cấu hình theme &mdash; Tài liệu Vinacart Docs 1.0</title>
   
 
   
@@ -32,8 +32,8 @@
   
         <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
+        <link rel="search" title="Tìm Kiếm" href="search.html"/>
+    <link rel="top" title="Tài liệu Vinacart Docs 1.0" href="index.html"/>
         <link rel="next" title="Cài đặt chung" href="global-config.html"/>
         <link rel="prev" title="Getting start" href="getting-start.html"/> 
 
@@ -102,12 +102,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#block-skin">Block Skin</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#image-configuration">Image Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="form.html">Sử dụng Form</a></li>
 </ul>
 
             
@@ -232,7 +232,7 @@ Ví dụ:</p>
 - version: phiên bản hiện tại của vinacart
 - sample_data: tên dữ liệu mẫu bạn đang viết theme này. Danh sách dữ liệu mẫu gồm có: thoitrang, dulich,...(Bạn có thể bổ xung tùy ý, lưu ý không viết cách &amp; chứa ký tự UTF-8).
 - name: tên thư mục theme.</p>
-<p>Xem tiếp phần dưới sẽ giải thích chi tiết cách dùng cấu hình.</p>
+<p>Xem tiếp phần dưới có giải thích chi tiết cách dùng cấu hình.</p>
 </div>
 <div class="section" id="settings">
 <h2>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h2>
@@ -724,6 +724,88 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
 <p>Chú ý: <code class="docutils literal"><span class="pre">&lt;_AI_&gt;</span></code> alias của <code class="docutils literal"><span class="pre">&lt;__AUTO_INCREASE__&gt;</span></code></p>
 </div>
 </div>
+<div class="section" id="image-configuration">
+<h2>Image Configuration<a class="headerlink" href="#image-configuration" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">config_image_thumb_width|     config_image_thumb_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>thumb image for product page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_popup_width|     config_image_popup_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>(listing_block) main image with media resource type for current object in page.</li>
+<li>main image for product page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_product_width|config_image_product_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>thumb image used in block: bestseller, featured, latest, special, listing_block (for product).</li>
+<li>thumb for products listing in category|manufacturer|search|special page</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_additional_width|config_image_additional_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>thumb image in block cart</li>
+<li>additional thumb images in product page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_related_width|config_image_related_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>main image for related products in product page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_cart_width|config_image_cart_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>list product in account page: cart, download, invoice, wishlist, confirm, guest_step_3</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_grid_width|config_image_grid_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>block manufacturer</li>
+<li>image in manufacturer page.</li>
+<li>list manufacturer images in product page.</li>
+<li>(admin) in all grid list with image support.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_category_width|config_image_category_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>block category, listing_block (for category)</li>
+<li>list subcategories in category page.</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">config_image_manufacturer_width|config_image_manufacturer_height</p>
+<blockquote>
+<div><ul class="simple">
+<li>listing_block (for manufacturer)</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+<p><em>Conclusion</em>:</p>
+<p>blocks: cart, category, bestseller (featured, latest, special), listing_block, manufacturer
+pages:</p>
+<blockquote>
+<div>single product
+products listing page (category|manufacturer|special|search..)
+account pages (cart, download, invoice, wishlist, confirm, guest_step_3)</div></blockquote>
+</div>
 </div>
 
 
@@ -745,7 +827,7 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, VinaCart.
+        &copy; Bản quyền thuộc 2016, VinaCart.
 
     </p>
   </div>
@@ -776,6 +858,7 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
 
   
 

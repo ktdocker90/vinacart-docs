@@ -2,11 +2,13 @@
 Hướng dẫn cài đặt Vinacart
 ==========================
 
-Tải mã nguồn Vinacart: http://www.vinacart.net/p/download.html
+Home: http://www.vinacart.net/p/download.html
 
 Cấu hình Server
 ---------------
 **Apache**: Yêu cầu bật modules & extension dưới đây:
+
+PHP version 5.6+
 
 - *Module*: mod_rewrite
 - *Extension*: 
@@ -30,7 +32,7 @@ Cài đặt
 
 1. Chuẩn bị Domain.
 
-Nếu cài đặt trên localhost, sử dụng xampp, wamp.. bạn cần tạo alias (vd: ``vinacart.dev``) thay vì sử dụng tên ``localhost``. Ví dụ:
+Cài đặt trên localhost, sử dụng xampp, wamp.. bạn tạo alias (vd: ``vinacart.dev``) thay vì sử dụng tên ``localhost``. Tuy nhiên điều này không bắt buộc. Ví dụ:
 Edit file `c:/xampp/conf/extra/httpd-vhosts.conf`
 
 ::
@@ -88,7 +90,7 @@ Nếu tạo nhiều cửa hàng với cùng một domain, (vd: store2.example.co
 	RewriteCond %{HTTP_HOST} !^store2\. [NC]
 	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
 
-Cập nhật
-========
-Để cập nhật bản mới nhất, nếu không có thay đổi cấu trúc các bảng dữ liệu bạn chỉ cần tải file nén về vào giải nén ghi đè vào các file cũ là được. 
-Trường hợp bản update có thông báo sửa đổi cấu trúc bảng, bạn có thể sửa lại database với file .sql vinacart cung cấp hoặc bạn cũng có thể cài lại vinacart cho web mới.
+..	Cập nhật
+	========
+	Để cập nhật bản mới nhất, nếu không có thay đổi cấu trúc các bảng dữ liệu bạn chỉ cần tải file nén về vào giải nén ghi đè vào các file cũ là được. 
+	Trường hợp bản update có thông báo sửa đổi cấu trúc bảng, bạn có thể sửa lại database với file .sql vinacart cung cấp hoặc bạn cũng có thể cài lại vinacart cho web mới.

@@ -16,6 +16,7 @@ Sau khi đọc hướng dẫn này, bạn có thể dễ dàng sử dụng nền
 .. backup-data
 .. troubleshooting
 .. form
+.. build-tool
 
 **Nội dung**:
 
@@ -28,6 +29,5 @@ Sau khi đọc hướng dẫn này, bạn có thể dễ dàng sử dụng nền
    theme-config
    global-config
    intro-layout-blocks
-   template
-   build-tool
+   template   
    FAQ

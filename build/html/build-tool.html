@@ -1,0 +1,331 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Công cụ build theme tự động &mdash; Tài liệu Vinacart Docs 1.0</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Tìm Kiếm" href="search.html"/>
+    <link rel="top" title="Tài liệu Vinacart Docs 1.0" href="index.html"/>
+        <link rel="prev" title="Template" href="template.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Vinacart Docs
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Hướng dẫn cài đặt Vinacart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theme-config.html">Cấu hình theme</a></li>
+<li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Công cụ build theme tự động</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#khai-niem-thuat-ngu">Khái niệm/Thuật ngữ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-form">Build Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#theme-xml">theme.xml</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#global-menu">Global/Menu</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#css-class-id">CSS class/id</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common-html-template">Common HTML Template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blocks-module">Blocks module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blocks-setting">Blocks setting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#blocks-advanced">Blocks Advanced</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#themes-list">Themes List</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#template">Template</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspect-html">Inspect HTML</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#html-pages">HTML Pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#export">Export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#upload-html">Upload HTML</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Vinacart Docs</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Công cụ build theme tự động</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/build-tool.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="cong-cu-build-theme-tu-dong">
+<h1>Công cụ build theme tự động<a class="headerlink" href="#cong-cu-build-theme-tu-dong" title="Permalink to this headline">¶</a></h1>
+<p>Đây là phần mềm tạo tpl tự động từ HTML đã được tách bóc gọn từ một bản HTML của giao diện gốc.</p>
+<div class="section" id="khai-niem-thuat-ngu">
+<h2>Khái niệm/Thuật ngữ<a class="headerlink" href="#khai-niem-thuat-ngu" title="Permalink to this headline">¶</a></h2>
+<p>Các blocks &amp; pages được thiết kế vào các file HTML riêng biệt, chúng có cấu trúc khác nhau tùy vào giao diện gốc. Trong đó một số block/page có sử dụng chung cấu trúc HTML như tabs, ul list,..sẽ được kế thừa và tự động tạo không cần thiết kế lại HTML cho chúng.</p>
+<ul class="simple">
+<li>block/page gọi chung là block.</li>
+<li>module: là những thành phần HTML dùng chung cho block.</li>
+</ul>
+</div>
+<div class="section" id="build-form">
+<h2>Build Form<a class="headerlink" href="#build-form" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Theme: chọn không gian làm việc với theme nào?</li>
+<li>web data: xác định dữ liệu mẫu của theme.</li>
+</ul>
+<p>Bạn có thể build từng block/page/.. hoặc build toàn bộ theme với nút <strong>Build</strong>. Để build từng thành phần một, nhấn vào lựa chọn &#8220;Build Option&#8221;,một hộp thoại hiện ra cho phép bạn chọn những block/page muốn build, ví dụ trường hợp bạn đã sửa lại một số thứ và chỉ muốn build chúng.</p>
+<p>Để build toàn bộ lại từ đầu, chọn vào Build All.</p>
+<p>Nhấn Build để bắt đầu.</p>
+<p>Để xóa toàn bộ dữ liệu theme nhấn vào nút Xóa.</p>
+</div>
+<div class="section" id="theme-xml">
+<h2>theme.xml<a class="headerlink" href="#theme-xml" title="Permalink to this headline">¶</a></h2>
+<p>Đây là File cấu hình cho theme. File này có khai báo asset (.css, .js), giao diện block &amp; các cấu hình khác như ảnh, cũng sẽ được cập nhật tự động bằng cách nhấn vào nút <code class="docutils literal"><span class="pre">Update</span> <span class="pre">theme.xml</span></code></p>
+<p>Một khi file này được tạo, những module có sử dụng cho việc tạo <code class="docutils literal"><span class="pre">theme.xml</span></code> sẽ được đánh đấu là đã build trong menu Themes List có nói ở bên dưới.</p>
+</div>
+<div class="section" id="global-menu">
+<h2>Global/Menu<a class="headerlink" href="#global-menu" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="css-class-id">
+<h3>CSS class/id<a class="headerlink" href="#css-class-id" title="Permalink to this headline">¶</a></h3>
+<p>Nội dung Shortcode được điền vào HTML để thay thế class khi build ra file .tpl. Trang này liệt kê danh sách những class có thể sử dụng. Bạn điền đầy đủ vào các trường tùy theo thiết kế giao diện HTML.</p>
+<p>Đoạn shortcode hiện ra ở bên dưới, bạn copy vào nội dung html. VD:
+..</p>
+<blockquote>
+<div>&lt;form class=&#8221;class1 [class:form_wrapper] class2&#8221;&gt;&lt;/form&gt;</div></blockquote>
+</div>
+<div class="section" id="common-html-template">
+<h3>Common HTML Template<a class="headerlink" href="#common-html-template" title="Permalink to this headline">¶</a></h3>
+<p>Các thành phần HTML dùng chung trong block/page, như nút , message, tabs, form input..
+Nhập đoạn HTML vào trình soạn thảo, và nhấn nút Lưu.</p>
+</div>
+<div class="section" id="blocks-module">
+<h3>Blocks module<a class="headerlink" href="#blocks-module" title="Permalink to this headline">¶</a></h3>
+<p>Phần này thiết lập giao diện module cho block, cho những block có sử dụng module (tức là block đó không có giao diện HTML riêng mà dùng chung thành phần HTML, gọi là module).</p>
+<p>Một module có thể tạo nhiều file html khai báo giao diện khác nhau cho module đó, có file chính trùng với tên module &amp; các file khác có hậu tố <code class="docutils literal"><span class="pre">-n</span></code>.
+VD:
+module tabs có các giao diện: tabs.html (giao diện chính), tabs-1.html, tabs-2.html,..</p>
+<p>Ứng dụng: Nếu 2 block dùng chung module, nhưng chúng có giao diện HTML khác nhau. Tại trang này chọn giao diện HTML mong muốn cho module sử dụng cho từng block.</p>
+<p>Lưu ý: mỗi block kế thừa 1 module.</p>
+</div>
+<div class="section" id="blocks-setting">
+<h3>Blocks setting<a class="headerlink" href="#blocks-setting" title="Permalink to this headline">¶</a></h3>
+<p>Phần này cho phép bạn cài đặt thêm cho block, hỗ trợ trong quá trình build ra .tpl. VD với những block có chỉnh sửa chi tiết như menu, nếu bạn muốn sửa thành phần HTML như thẻ dropdown, class..</p>
+<p>Mỗi cài đặt được thiết lập với theme hiện tại &amp; sẽ backup cấu hình này trong thư mục html_saved/&lt;theme&gt;</p>
+</div>
+<div class="section" id="blocks-advanced">
+<h3>Blocks Advanced<a class="headerlink" href="#blocks-advanced" title="Permalink to this headline">¶</a></h3>
+<p>Đây là phần cài đặt, tùy biến nâng cao cho blocks.</p>
+<ul class="simple">
+<li><strong>Tính năng 1: Áp dụng HTML</strong>:</li>
+<li>mỗi block có thể build ra nhiều tpl với đầu vào các html khác nhau. Để thực hiện bạn thêm block muốn tạo thêm tpl, chọn file HTML và tên file tpl xuất ra. Sau đó lưu lại. Tại mục Form, chọn Build Option và nhấn nút Build &gt; chọn block muốn build &gt; Ok.</li>
+</ul>
+</div>
+<div class="section" id="themes-list">
+<h3>Themes List<a class="headerlink" href="#themes-list" title="Permalink to this headline">¶</a></h3>
+<p>Thống kê dữ liệu các themes được tạo trong hệ thống. Mỗi theme có liệt kê trạng thái của các block (biểu tượng mầu xanh: block có sửa lại nhưng chưa build, mầu xám: block đã build).</p>
+<p>Nhấn Delete để xóa dữ liệu của theme ra khỏi CSDL.
+Nhấn Reset để đánh dấu tất cả các block cần build lại.</p>
+</div>
+</div>
+<div class="section" id="template">
+<h2>Template<a class="headerlink" href="#template" title="Permalink to this headline">¶</a></h2>
+<p>Panel này liệt kê những file .tpl đã được build tự động. Nhấn vào file hoặc chuột phải chọn <code class="docutils literal"><span class="pre">edit</span></code> để sửa nội dung. Để xóa file chuột phải chọn <code class="docutils literal"><span class="pre">Delete</span></code>.</p>
+</div>
+<div class="section" id="inspect-html">
+<h2>Inspect HTML<a class="headerlink" href="#inspect-html" title="Permalink to this headline">¶</a></h2>
+<p>Phần này liệt kê những file html được tạo. Để thêm file có 2 cách :</p>
+<ul class="simple">
+<li>Sử dụng công cụ inspect (beta) để khoanh vùng block và các thành phần chi tiết của block. Sau khi đã đánh dấu đầy đủ, chuột phải tại vùng block có mầu đỏ chọn edit &amp; nhấn Export Block. File HTML của block đó sẽ được lưu lại vào thư mục <code class="docutils literal"><span class="pre">html_saved/&lt;theme&gt;</span></code>.</li>
+</ul>
+<p>Tại đó Bạn cũng xem trước nội dung tpl đã sinh ra để kiểm tra bạn đã đánh dấu đúng thành phần của block hay không.</p>
+<ul class="simple">
+<li>Soạn trực tiếp nội dung HTML của block: cách này nhanh gọn &amp; chính xác hơn. Để thêm file nhấn nút <code class="docutils literal"><span class="pre">+</span></code> bên cạnh panel, hộp thoại xuất hiện chọn file và nhấn nút Ok.</li>
+</ul>
+<p>Chú ý: bạn có thể thêm 1 hoặc nhiều file cùng lúc, chuột phải tại tab đã mở, có 4 lựa chọn: close, close All, Save &amp; Save all.</p>
+<p>Bạn sẽ thây nội dung mẫu của block trong cửa sổ soạn thảo. Những thành phần của block được highlight mẫu xanh, cho biết vị trí của chúng đặt trong thuộc tính class trong nội dung HTML.</p>
+<p>Tên class có tiền tố <code class="docutils literal"><span class="pre">__vnc-</span></code> sau đó là tên thành phần. Trong đó có tên class chính bao toàn bộ nội dung block, có dạng: <code class="docutils literal"><span class="pre">__vnc-block-&lt;block_name&gt;</span></code>
+Chú ý: không được thiếu class này.</p>
+<p>Để chèn class đánh dấu, chọn combobox trên thanh toolbar. Build block ra file .tpl nhấn nút play bên cạnh. FIle .tpl được lưu tại thư mục <code class="docutils literal"><span class="pre">template/&lt;theme&gt;</span></code></p>
+</div>
+<div class="section" id="html-pages">
+<h2>HTML Pages<a class="headerlink" href="#html-pages" title="Permalink to this headline">¶</a></h2>
+<p>Panel này liệt kê những file HTML của giao diện gốc, nhấn vào để xem và sử dụng công cụ inspect. Tính năng inspect sẽ trích xuất file HTML cho từng block.</p>
+</div>
+<div class="section" id="export">
+<h2>Export<a class="headerlink" href="#export" title="Permalink to this headline">¶</a></h2>
+<p>Tùy chọn Export zip với các file html đã trích xuất, các file .tpl đã build &amp; toàn bộ nội dung theme.</p>
+</div>
+<div class="section" id="upload-html">
+<h2>Upload HTML<a class="headerlink" href="#upload-html" title="Permalink to this headline">¶</a></h2>
+<p>Tại trang này cho phép bạn tải lên file zip chứa file .html của giao diện HTML gốc hoặc các file html được trích xuất nếu bạn có.
+Chú ý: zip chứa trực tiếp các file không nằm trong thư mục mẹ (root).</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="template.html" class="btn btn-neutral" title="Template" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Bản quyền thuộc 2016, VinaCart.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

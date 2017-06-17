@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Template &mdash; Vinacart Docs 1.0 documentation</title>
+  <title>Template &mdash; Tài liệu Vinacart Docs 1.0</title>
   
 
   
@@ -32,9 +32,9 @@
   
         <link rel="index" title="Index"
               href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="Vinacart Docs 1.0 documentation" href="index.html"/>
-        <link rel="next" title="Sử dụng Form" href="form.html"/>
+        <link rel="search" title="Tìm Kiếm" href="search.html"/>
+    <link rel="top" title="Tài liệu Vinacart Docs 1.0" href="index.html"/>
+        <link rel="next" title="Công cụ build theme tự động" href="build-tool.html"/>
         <link rel="prev" title="Sử dụng layout blocks" href="intro-layout-blocks.html"/> 
 
   
@@ -95,7 +95,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#bien-su-dung-trong-template">Biến sử dụng trong template</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="form.html">Sử dụng Form</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Công cụ build theme tự động</a></li>
 </ul>
 
             
@@ -153,11 +153,22 @@
         <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
         <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">description</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
 
+      <span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_category&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">name</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_category&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">description</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">p</span><span class="o">&gt;</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_entry&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_entry&#39;</span><span class="p">)</span><span class="o">.</span><span class="nx">entry_title</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+
+<span class="p">{</span><span class="c1"># elseif vnc.getVar(&#39;blog_author&#39;) %}</span>
+  <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{{</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;blog_author&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h1</span><span class="o">&gt;</span>
+  <span class="c1">#}</span>
+
       <span class="p">{</span><span class="o">%</span> <span class="k">elseif</span> <span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="o">%</span><span class="p">}</span>
         <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
 
       <span class="p">{</span><span class="o">%</span> <span class="k">else</span> <span class="o">%</span><span class="p">}</span>
-        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="p">{{</span><span class="nx">vnc</span><span class="o">.</span><span class="nx">getVar</span><span class="p">(</span><span class="s1">&#39;heading_title&#39;</span><span class="p">)</span> <span class="p">}}</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="k">Empty</span><span class="o">&lt;/</span><span class="nx">h3</span><span class="o">&gt;</span>
       <span class="p">{</span><span class="o">%</span> <span class="k">endif</span> <span class="o">%</span><span class="p">}</span>
 <span class="p">{</span><span class="o">%</span> <span class="k">endif</span> <span class="o">%</span><span class="p">}</span>
 </pre></div>
@@ -179,6 +190,19 @@
 
 <span class="c1">//for block</span>
 <span class="nx">blockVar</span><span class="p">(</span><span class="s1">&#39;blocks/bestseller&#39;</span><span class="p">,</span> <span class="s1">&#39;products&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Template tag</strong></p>
+<p>common template tag:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">is_admin</span><span class="p">()</span> <span class="o">%</span><span class="p">}</span>
+<span class="n">is_home</span><span class="p">()</span>
+<span class="n">is_category</span><span class="p">()</span>
+<span class="n">is_single_product</span><span class="p">()</span>
+<span class="n">is_manufacturer</span><span class="p">()</span>
+<span class="n">is_generic_pages</span><span class="p">()</span>
+<span class="n">is_search</span><span class="p">()</span>
+<span class="n">is_ajax</span><span class="p">()</span>
+<span class="n">is_page</span><span class="p">(</span><span class="s1">&#39;content/contact&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Model</strong></p>
@@ -203,6 +227,7 @@
 <p><strong>Debuging</strong>:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">buitin</span> <span class="n">function</span> <span class="n">help</span> <span class="n">you</span> <span class="nb">print</span> <span class="n">value</span> <span class="n">of</span> <span class="nb">any</span> <span class="n">variable</span>
 <span class="p">{{</span> <span class="n">_print</span><span class="p">(</span><span class="o">..</span><span class="p">)</span> <span class="p">}}</span>
+<span class="p">{{</span> <span class="n">_debug_backtrace</span><span class="p">(</span><span class="n">debug_backtrace</span><span class="p">())</span> <span class="p">}}</span>
 </pre></div>
 </div>
 <p><strong>URL</strong>:</p>
@@ -217,6 +242,22 @@
 <span class="p">{{</span> <span class="n">customer</span><span class="o">.</span><span class="n">getWishList</span><span class="p">()</span><span class="o">|</span><span class="n">length</span> <span class="p">}}</span>
 </pre></div>
 </div>
+<p><strong>User</strong></p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">//</span><span class="n">current</span> <span class="n">user</span>
+<span class="p">{{</span> <span class="n">current_user</span><span class="p">()</span> <span class="p">}}</span>
+</pre></div>
+</div>
+<p><strong>Utils functions</strong></p>
+<p>String:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>//replace string at first found
+str_replace_first($find, $replace, $object)
+</pre></div>
+</div>
+<p>Config:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;store_main_email&#39;</span><span class="p">)</span>
+<span class="p">{{</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;livechat_embed&#39;</span><span class="p">)</span> <span class="p">}}</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -227,7 +268,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="form.html" class="btn btn-neutral float-right" title="Sử dụng Form" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="build-tool.html" class="btn btn-neutral float-right" title="Công cụ build theme tự động" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="intro-layout-blocks.html" class="btn btn-neutral" title="Sử dụng layout blocks" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -239,7 +280,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, VinaCart.
+        &copy; Bản quyền thuộc 2016, VinaCart.
 
     </p>
   </div>
@@ -270,6 +311,7 @@
       <script type="text/javascript" src="_static/jquery.js"></script>
       <script type="text/javascript" src="_static/underscore.js"></script>
       <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
 
   
 
