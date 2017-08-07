@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -44,6 +46,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -84,7 +87,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Hướng dẫn cài đặt Vinacart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
@@ -108,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thiet-ke-website.html">Dịch vụ thiết kế website Hoangweb</a></li>
 </ul>
 
             
@@ -120,8 +127,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Vinacart Docs</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vinacart Docs</a>
+        
       </nav>
 
 
@@ -130,23 +139,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Cấu hình theme</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Cấu hình theme</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/theme-config.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/theme-config.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -273,7 +299,7 @@ Ví dụ:</p>
 </pre></div>
 </div>
 <p>thuộc tính type chỉ định kiểu file, vd <code class="docutils literal"><span class="pre">type=&quot;css&quot;</span></code> dành cho file .css, nếu file bạn muốn load ở cuối trang thì thêm <code class="docutils literal"><span class="pre">bottom=&quot;1&quot;</span></code> vào thẻ <code class="docutils literal"><span class="pre">&lt;file</span></code> giống như trên không thì mặc định chúng hiển thị ở trong thẻ <code class="docutils literal"><span class="pre">&lt;head</span></code> (chỉ dành cho file js).</p>
-<p>Đối với file css, bạn có thể bổ xung thuộc tính <code class="docutils literal"><span class="pre">media</span></code> bằng cách khai báo thêm thuộc tính <code class="docutils literal"><span class="pre">media</span></code>. vd: <em>media=&#8221;all&#8221;</em></p>
+<p>Đối với file css, bạn có thể bổ xung thuộc tính <code class="docutils literal"><span class="pre">media</span></code> bằng cách khai báo thêm thuộc tính <code class="docutils literal"><span class="pre">media</span></code>. vd: <em>media=&quot;all&quot;</em></p>
 <p>Để cho đơn giản và dễ quản lý tôi đưa toàn bộ các files assets của theme vào một thư mục <code class="docutils literal"><span class="pre">assets</span></code> nằm tại <code class="docutils literal"><span class="pre">storefront/view/&lt;theme_name&gt;/</span></code>. Lưu ý: đường dẫn được bắt đầu trong thư mục theme.</p>
 <p>Các files css và js hệ thống bạn không được xóa đặc biệt là <a href="#id1"><span class="problematic" id="id2">*</span></a>.js chúng sử lý hành động của vinacart. vd: <code class="docutils literal"><span class="pre">/javascript</span></code>, <code class="docutils literal"><span class="pre">/stylesheet</span></code>
 Bên cạnh đó chúng ta có thể chèn URL ngoài như thư viện jquery,...google font.</p>
@@ -420,7 +446,7 @@ return array(
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">page</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;content/contact&quot;</span> <span class="n">child_pages</span><span class="o">=</span><span class="s2">&quot;1&quot;</span> <span class="n">template</span><span class="o">=</span><span class="s2">&quot;common/page-contact.tpl&quot;</span><span class="o">&gt;&lt;/</span><span class="n">page</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Cách này sẽ áp dụng template page-contact.tpl cho mọi trang con từ địa chỉ &#8216;content/contact&#8217;.</p>
+<p>Cách này sẽ áp dụng template page-contact.tpl cho mọi trang con từ địa chỉ 'content/contact'.</p>
 <p><strong>Lọc page bởi tham số</strong></p>
 <p>Bạn cũng có thể sử dụng nhiều templates cho 1 trang, bằng cách lọc tham số URL. Ở ví dụ trên, page <code class="docutils literal"><span class="pre">content/content</span></code> sẽ hiển thị nội dung trang có <em>id=1</em>, khai báo tham số <code class="docutils literal"><span class="pre">content_id</span></code> vào thuộc tính <code class="docutils literal"><span class="pre">args</span></code>.</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">page</span> <span class="n">context</span><span class="o">=</span><span class="s2">&quot;content/content&quot;</span> <span class="n">args</span><span class="o">=</span><span class="s2">&quot;content_id=1&quot;</span> <span class="n">template</span><span class="o">=</span><span class="s2">&quot;common/page-aboutus.tpl&quot;</span><span class="o">&gt;&lt;/</span><span class="n">page</span><span class="o">&gt;</span>
@@ -581,36 +607,26 @@ Nếu bạn muốn áp dụng một layout cho các page khác, khai báo thẻ 
 </pre></div>
 </div>
 <p>Bạn cũng có thể thay đổi giá trị cài đặt ở từng vị trí parent, bằng cách khai báo giá trị trong thẻ <code class="docutils literal"><span class="pre">&lt;skin&gt;</span></code>.</p>
-<dl class="docutils">
-<dt>::</dt>
-<dd><blockquote class="first">
-<div><p>&lt;skin&gt;
-&lt;_AI_&gt;</p>
-<blockquote>
-<div><p>&lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
-&lt;position&gt;&lt;![CDATA[content_bottom]]&gt;&lt;/position&gt;
-&lt;config&gt;</p>
-<blockquote>
-<div>&lt;param name=&#8221;blog_entry_image_width&#8221;&gt;&lt;![CDATA[blog_entry_image_width]]&gt;&lt;/param&gt;
-&lt;param name=&#8221;blog_entry_image_height&#8221;&gt;&lt;![CDATA[blog_entry_image_height]]&gt;&lt;/param&gt;</div></blockquote>
-<p>&lt;/config&gt;</p>
-</div></blockquote>
-<p>&lt;/_AI_&gt;
-&lt;_AI_&gt;</p>
-<blockquote>
-<div><p>&lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
-&lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
-&lt;config&gt;</p>
-<blockquote>
-<div>&lt;param name=&#8221;blog_entry_image_width&#8221;&gt;&lt;![CDATA[blog_entry_small_image_width]]&gt;&lt;/param&gt;
-&lt;param name=&#8221;blog_entry_image_height&#8221;&gt;&lt;![CDATA[blog_entry_small_image_height]]&gt;&lt;/param&gt;</div></blockquote>
-<p>&lt;/config&gt;</p>
-</div></blockquote>
-<p>&lt;/_AI_&gt;</p>
-</div></blockquote>
-<p class="last">&lt;/skin&gt;</p>
-</dd>
-</dl>
+<div class="highlight-default"><div class="highlight"><pre><span></span>    &lt;skin&gt;
+    &lt;_AI_&gt;
+        &lt;name&gt;&lt;![CDATA[sb_flat]]&gt;&lt;/name&gt;
+        &lt;position&gt;&lt;![CDATA[content_bottom]]&gt;&lt;/position&gt;
+        &lt;config&gt;
+            &lt;param name=&quot;blog_entry_image_width&quot;&gt;&lt;![CDATA[blog_entry_image_width]]&gt;&lt;/param&gt;
+            &lt;param name=&quot;blog_entry_image_height&quot;&gt;&lt;![CDATA[blog_entry_image_height]]&gt;&lt;/param&gt;
+        &lt;/config&gt;
+    &lt;/_AI_&gt;
+    &lt;_AI_&gt;
+        &lt;name&gt;&lt;![CDATA[sb]]&gt;&lt;/name&gt;
+        &lt;position&gt;&lt;![CDATA[column_left]]&gt;&lt;/position&gt;
+        &lt;config&gt;
+            &lt;param name=&quot;blog_entry_image_width&quot;&gt;&lt;![CDATA[blog_entry_small_image_width]]&gt;&lt;/param&gt;
+            &lt;param name=&quot;blog_entry_image_height&quot;&gt;&lt;![CDATA[blog_entry_small_image_height]]&gt;&lt;/param&gt;
+        &lt;/config&gt;
+    &lt;/_AI_&gt;
+&lt;/skin&gt;
+</pre></div>
+</div>
 <p>Xem thêm block skin ở phần dưới.</p>
 </div>
 <div class="section" id="block-skin">
@@ -810,15 +826,18 @@ account pages (cart, download, invoice, wishlist, confirm, guest_step_3)</div></
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="global-config.html" class="btn btn-neutral float-right" title="Cài đặt chung" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="global-config.html" class="btn btn-neutral float-right" title="Cài đặt chung" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="getting-start.html" class="btn btn-neutral" title="Getting start" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="getting-start.html" class="btn btn-neutral" title="Getting start" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -827,7 +846,7 @@ account pages (cart, download, invoice, wishlist, confirm, guest_step_3)</div></
 
   <div role="contentinfo">
     <p>
-        &copy; Bản quyền thuộc 2016, VinaCart.
+        &copy; Copyright 2016, VinaCart.
 
     </p>
   </div>
@@ -852,7 +871,8 @@ account pages (cart, download, invoice, wishlist, confirm, guest_step_3)</div></
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

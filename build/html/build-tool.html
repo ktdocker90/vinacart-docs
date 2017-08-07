@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -33,8 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Tìm Kiếm" href="search.html"/>
-    <link rel="top" title="Tài liệu Vinacart Docs 1.0" href="index.html"/>
-        <link rel="prev" title="Template" href="template.html"/> 
+    <link rel="top" title="Tài liệu Vinacart Docs 1.0" href="index.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -43,6 +44,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -83,7 +85,10 @@
           
             
             
-                <ul class="current">
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Hướng dẫn cài đặt Vinacart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
@@ -91,26 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Công cụ build theme tự động</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#khai-niem-thuat-ngu">Khái niệm/Thuật ngữ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#build-form">Build Form</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#theme-xml">theme.xml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#global-menu">Global/Menu</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#css-class-id">CSS class/id</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#common-html-template">Common HTML Template</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#blocks-module">Blocks module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#blocks-setting">Blocks setting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#blocks-advanced">Blocks Advanced</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#themes-list">Themes List</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#template">Template</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#inspect-html">Inspect HTML</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#html-pages">HTML Pages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#export">Export</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#upload-html">Upload HTML</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="thiet-ke-website.html">Dịch vụ thiết kế website Hoangweb</a></li>
 </ul>
 
             
@@ -123,8 +109,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Vinacart Docs</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vinacart Docs</a>
+        
       </nav>
 
 
@@ -133,23 +121,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Công cụ build theme tự động</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Công cụ build theme tự động</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/build-tool.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/build-tool.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -172,7 +177,7 @@
 <li>Theme: chọn không gian làm việc với theme nào?</li>
 <li>web data: xác định dữ liệu mẫu của theme.</li>
 </ul>
-<p>Bạn có thể build từng block/page/.. hoặc build toàn bộ theme với nút <strong>Build</strong>. Để build từng thành phần một, nhấn vào lựa chọn &#8220;Build Option&#8221;,một hộp thoại hiện ra cho phép bạn chọn những block/page muốn build, ví dụ trường hợp bạn đã sửa lại một số thứ và chỉ muốn build chúng.</p>
+<p>Bạn có thể build từng block/page/.. hoặc build toàn bộ theme với nút <strong>Build</strong>. Để build từng thành phần một, nhấn vào lựa chọn &quot;Build Option&quot;,một hộp thoại hiện ra cho phép bạn chọn những block/page muốn build, ví dụ trường hợp bạn đã sửa lại một số thứ và chỉ muốn build chúng.</p>
 <p>Để build toàn bộ lại từ đầu, chọn vào Build All.</p>
 <p>Nhấn Build để bắt đầu.</p>
 <p>Để xóa toàn bộ dữ liệu theme nhấn vào nút Xóa.</p>
@@ -190,7 +195,7 @@
 <p>Đoạn shortcode hiện ra ở bên dưới, bạn copy vào nội dung html. VD:
 ..</p>
 <blockquote>
-<div>&lt;form class=&#8221;class1 [class:form_wrapper] class2&#8221;&gt;&lt;/form&gt;</div></blockquote>
+<div>&lt;form class=&quot;class1 [class:form_wrapper] class2&quot;&gt;&lt;/form&gt;</div></blockquote>
 </div>
 <div class="section" id="common-html-template">
 <h3>Common HTML Template<a class="headerlink" href="#common-html-template" title="Permalink to this headline">¶</a></h3>
@@ -263,22 +268,18 @@ Chú ý: zip chứa trực tiếp các file không nằm trong thư mục mẹ (
 
 
            </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-      
-        <a href="template.html" class="btn btn-neutral" title="Template" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Bản quyền thuộc 2016, VinaCart.
+        &copy; Copyright 2016, VinaCart.
 
     </p>
   </div>
@@ -303,7 +304,8 @@ Chú ý: zip chứa trực tiếp các file không nằm trong thư mục mẹ (
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>

@@ -1,0 +1,96 @@
+==========================
+Hướng dẫn cài đặt Vinacart
+==========================
+
+Home: http://www.vinacart.net/p/download.html
+
+Cấu hình Server
+---------------
+**Apache**: Yêu cầu bật modules & extension dưới đây:
+
+PHP version 5.6+
+
+- *Module*: mod_rewrite
+- *Extension*: 
+	- mysql|mysqli|pdo_mysql : Original MySQL API
+	- gd : a graphics library used to manipulate images
+	- curl : client for URL handling used by GPM
+	- zlib : read and write gzip (.gz) compressed files
+	- mbstring : multibyte encoding
+	- mcrypt : mcrypt library
+	- pcntl : Process Control support signal handling and process termination
+	- openssl : encrypting & decrypting data
+
+..
+	- ioncube : cài extension này bản mới nhất từ trang https://www.ioncube.com/loaders.php
+
+Chú ý: Không hỗ trợ LiteSpeed Web Server.
+
+
+Cài đặt
+-------
+
+1. Chuẩn bị Domain.
+
+Cài đặt trên localhost, sử dụng xampp, wamp.. bạn tạo alias (vd: ``vinacart.dev``) thay vì sử dụng tên ``localhost``. Tuy nhiên điều này không bắt buộc. Ví dụ:
+Edit file `c:/xampp/conf/extra/httpd-vhosts.conf`
+
+::
+
+	<VirtualHost *:80>
+	    ServerName vinacart.dev
+	    ServerAlias www.vinacart.dev
+	    DocumentRoot "C:\xampp\htdocs\vinacart"
+	    <Directory "C:\xampp\htdocs\vinacart">
+	        Order allow,deny
+	        Allow from all
+	    </Directory>
+		ErrorLog C:\xampp\htdocs\error.txt
+	</VirtualHost>
+
+2. Tạo database.
+
+3. Thiết lập quyền truy cập Files.
+
+Nếu chạy web trên hệ điều hành Window + xampp/wamp thì bỏ qua bước này. 
+Trường hợp sử dụng Linux, để thiết lập chmod đầy đủ cho các file chúng ta chạy file *caidat.php* trên trình duyệt:
+``http://vinacart.dev/caidat.php``
+
+4. Tiến hành cài đặt.
+
+Mở trình duyệt, truy cập trang cài đặt: ``http://vinacart.dev/install/``
+Làm theo trình tự các bước (wizard). Điền thông tin đầy đủ rồi nhấn cài đặt, chờ trong vài phút để trình cài đặt hoàn tất.
+
+
+Chú ý: nếu bạn muốn cài đặt lại vinacart, sử dụng URL sau: ``http://vinacart.dev/install/?rt=install&force=1``
+
+**Sử dụng tiền tố www**
+
+Nếu bạn muốn sử dụng tiền tố www, và chuyển hướng URL sang subdomain này sau khi cài đặt xong, truy cập vào trang quản trị sửa lại đường dẫn cửa hàng. Vd: http://www.example.com
+
+*Chú ý*: bạn cần xóa cache và tắt cache nếu URL hoạt động không chính xác. Nếu URL đã hoạt động bạn có thể bật cache trở lại.
+
+Lúc này admin vẫn hoạt động với URL cũ (không có www), tuy nhiên để storefront và admin tự động chuyển hướng sang www khi người dùng gõ tên miền của bạn không chứa www. Bạn thêm dòng sau vào file .htaccess
+
+::
+
+	..
+	RewriteRule ^(.*)\?*$ index.php?_route_=$1 [L,QSA]
+
+	# if want to redirect non-www to www
+	RewriteCond %{HTTP_HOST} !^www\. [NC]
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
+	..
+
+Nếu tạo nhiều cửa hàng với cùng một domain, (vd: store2.example.com) hãy liệt kê trong danh sách loại bỏ để www được chuyển hướng đúng.
+
+::
+
+	RewriteCond %{HTTP_HOST} !^www\. [NC]
+	RewriteCond %{HTTP_HOST} !^store2\. [NC]
+	RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [L,QSA]
+
+..	Cập nhật
+	========
+	Để cập nhật bản mới nhất, nếu không có thay đổi cấu trúc các bảng dữ liệu bạn chỉ cần tải file nén về vào giải nén ghi đè vào các file cũ là được. 
+	Trường hợp bản update có thông báo sửa đổi cấu trúc bảng, bạn có thể sửa lại database với file .sql vinacart cung cấp hoặc bạn cũng có thể cài lại vinacart cho web mới.

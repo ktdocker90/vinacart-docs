@@ -13,6 +13,8 @@
 
   
   
+  
+  
 
   
 
@@ -42,6 +44,7 @@
 
 <body class="wy-body-for-nav" role="document">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -82,7 +85,10 @@
           
             
             
-                <ul>
+              
+            
+            
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="cai-dat-vinacart.html">Hướng dẫn cài đặt Vinacart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vinacart-theme-structure.html">Cấu trúc theme</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting-start.html">Getting start</a></li>
@@ -90,7 +96,7 @@
 <li class="toctree-l1"><a class="reference internal" href="global-config.html">Cài đặt chung</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro-layout-blocks.html">Sử dụng layout blocks</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
-<li class="toctree-l1"><a class="reference internal" href="build-tool.html">Công cụ build theme tự động</a></li>
+<li class="toctree-l1"><a class="reference internal" href="thiet-ke-website.html">Dịch vụ thiết kế website Hoangweb</a></li>
 </ul>
 
             
@@ -103,8 +109,10 @@
 
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Vinacart Docs</a>
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Vinacart Docs</a>
+        
       </nav>
 
 
@@ -113,23 +121,40 @@
         <div class="rst-content">
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Sử dụng SSL HTTPS</li>
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Sử dụng SSL HTTPS</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="_sources/faq.txt" rel="nofollow"> View page source</a>
+            
+            <a href="_sources/faq.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -137,13 +162,16 @@
             
   <div class="section" id="su-dung-ssl-https">
 <h1>Sử dụng SSL HTTPS<a class="headerlink" href="#su-dung-ssl-https" title="Permalink to this headline">¶</a></h1>
-<p>Để sử dụng SSL https, bạn điền URL vào giá trị trường &#8220;Secure Store URL&#8221; ở trang thiết lập cài đặt cửa hảng &#8220;setting/setting/details&#8221;. Chú ý: 2 tên miền &#8220;Store URL&#8221; và &#8220;Secure Store URL&#8221; phải cùng một domain.
+<p>Để sử dụng SSL https, bạn điền URL vào giá trị trường &quot;Secure Store URL&quot; ở trang thiết lập cài đặt cửa hảng &quot;setting/setting/details&quot;. Chú ý: 2 tên miền &quot;Store URL&quot; và &quot;Secure Store URL&quot; phải cùng một domain.
 Ví dụ: <a class="reference external" href="http://shop.vn">http://shop.vn</a> &amp; <a class="reference external" href="https://www.shop.vn">https://www.shop.vn</a> là 2 tên miền khác nhau, phân biệt cả subdomain (www).</p>
 <p><strong>Chuyển hướng SSL</strong></p>
 <p>Sử dụng .htaccess. Bạn muốn chuyển hướng non-https sang https, thêm dòng sau vào file .htaccess.</p>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
            </div>
           </div>
           <footer>
@@ -153,7 +181,7 @@ Ví dụ: <a class="reference external" href="http://shop.vn">http://shop.vn</a>
 
   <div role="contentinfo">
     <p>
-        &copy; Bản quyền thuộc 2016, VinaCart.
+        &copy; Copyright 2016, VinaCart.
 
     </p>
   </div>
@@ -178,7 +206,8 @@ Ví dụ: <a class="reference external" href="http://shop.vn">http://shop.vn</a>
             VERSION:'1.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="_static/jquery.js"></script>
