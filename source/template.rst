@@ -169,3 +169,12 @@ Config:
 
 	config.get('store_main_email')
 	{{ config.get('livechat_embed') }}
+
+Khác:
+
+::
+	
+	{% set item = staticCall('HtmlElementFactory', 'create', data) %}
+	{{ convert(obj, 'string') }}
+	//load helper
+	{{ util('string') }}
